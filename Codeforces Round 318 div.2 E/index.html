@@ -3,6 +3,25 @@
 
 <!-- Head tag -->
 <head>
+	<!-- hexo-inject:begin --><!-- hexo-inject:end --><!--Mathjax-->
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+            processEscapes: true,
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+    }); 
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';                 
+        }       
+    });
+    </script>
+    <script type="text/javascript" async
+        src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -73,7 +92,7 @@
     
 
 
-    <!-- favicon -->
+    <!-- favicon --><!-- hexo-inject:begin --><!-- hexo-inject:end -->
     
 	
 </head>
@@ -81,7 +100,7 @@
 
 <body>
 
-    <!-- Menu -->
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><!-- Menu -->
     <!-- Navigation -->
 <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
     <div class="container-fluid">
@@ -193,14 +212,14 @@
                 <h3 id="题目：http-codeforces-com-contest-574-problem-E"><a href="#题目：http-codeforces-com-contest-574-problem-E" class="headerlink" title="题目：http://codeforces.com/contest/574/problem/E"></a>题目：<a href="http://codeforces.com/contest/574/problem/E" target="_blank" rel="external">http://codeforces.com/contest/574/problem/E</a></h3><h3 id="题意："><a href="#题意：" class="headerlink" title="题意："></a>题意：</h3><p>给出一颗树。（输入n和n-1条边）</p>
 <p>求是否能在宽度为2的无限长纸带上画出树。</p>
 <p>例如：</p>
-<p><img src="/uploads/Codeforces Round 318 div.2 E PE2.png" alt=""></p>
+<p><img src="/images/Codeforces Round 318 div.2 E PE2.png" alt=""></p>
 <p>（节点要画在点上，树边不能相交）</p>
 <a id="more"></a>
 <h3 id="题解："><a href="#题解：" class="headerlink" title="题解："></a>题解：</h3><p>对于一个树根，它能有无限个儿子。</p>
 <p>而它的儿子中，右边区间和右边区间各有一个能有无限个儿子。</p>
 <p>这个就是最优情况了。按照这种方法，就能够构造出最优解。</p>
 <p>把情况简化一下，就是这样：</p>
-<p><img src="/uploads/Codeforces Round 318 div.2 E PE1.png" alt=""></p>
+<p><img src="/images/Codeforces Round 318 div.2 E PE1.png" alt=""></p>
 <p>上面一条黑色的链就是能够无限生儿子的点。这条链只能有一条。</p>
 <p>蓝色为黑点生出的儿子，可以有无限个。</p>
 <p>绿色的链为蓝色的点的儿子，一个蓝点可以有两条绿链。</p>
@@ -278,7 +297,7 @@
 <!-- Gallery -->
 <script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
 
-<!-- Disqus Comments -->
+<!-- Disqus Comments --><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 
 

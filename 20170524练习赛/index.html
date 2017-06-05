@@ -3,6 +3,25 @@
 
 <!-- Head tag -->
 <head>
+	<!-- hexo-inject:begin --><!-- hexo-inject:end --><!--Mathjax-->
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+            processEscapes: true,
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+    }); 
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';                 
+        }       
+    });
+    </script>
+    <script type="text/javascript" async
+        src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -70,7 +89,7 @@
     
 
 
-    <!-- favicon -->
+    <!-- favicon --><!-- hexo-inject:begin --><!-- hexo-inject:end -->
     
 	
 </head>
@@ -78,7 +97,7 @@
 
 <body>
 
-    <!-- Menu -->
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><!-- Menu -->
     <!-- Navigation -->
 <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
     <div class="container-fluid">
@@ -207,13 +226,13 @@
 <p>那么就把 $$sum(x)-x \cdot res$$ 作为一个整体,对于二分出的一个答案$$res$$，只要找到一对$L$，$R$满足上面的式子而且$R-L$大于$K$就说明答案可行。</p>
 <h1 id="Task4"><a href="#Task4" class="headerlink" title="Task4"></a>Task4</h1><p>这题只能用斜率优化了，但是由于考试的时候还不会这么搞。。。。然后就炸了。</p>
 <p>主要还是推公式。。。。</p>
-<p>设 $P_i$ 为第 $i$ 辆车开始制造的时间，$$S<em>x = \sum</em>{k=1}^x T_x$$ 。</p>
-<p>对于第 $i$ 辆车,枚举每个人 $j$ ,就有：<br>$$<br>P_i + S_j \cdot F<em>i \ge P</em>{i-1} + S<em>{j+1} * F</em>{i-1}<br>$$</p>
-<p>$$<br>\Delta P_{i-1} = P<em>i - P{i-1}  \ge S</em>{j+1} \cdot F_{i-1} - S<em>j \cdot F</em>{i-1}<br>$$</p>
-<p>$$<br>\Delta P_{i-1}  = \max( S<em>j+1 \cdot F</em>{i-1} - S<em>j \cdot F</em>{i-1} )<br>$$</p>
-<p>$$<br>\Delta P_{i-1}  = \max( \frac {F<em>i} { F</em>{i-1} } \cdot S_{j+1} - S_j )<br>$$</p>
+<p>设 $P_i$ 为第 $i$ 辆车开始制造的时间，$$S_x = \sum_{k=1}^x T_x$$ 。</p>
+<p>对于第 $i$ 辆车,枚举每个人 $j$ ,就有：<br>$$<br>P_i + S_j \cdot F_i \ge P_{i-1} + S_{j+1} \cdot F_{i-1}<br>$$</p>
+<p>$$<br>\Delta P_{i-1} = P_i - P{i-1}  \ge S_{j+1} \cdot F_{i-1} - S_j \cdot F_{i-1}<br>$$</p>
+<p>$$<br>\Delta P_{i-1}  = \max( S_j+1 \cdot F_{i-1} - S_j \cdot F_{i-1} )<br>$$</p>
+<p>$$<br>\Delta P_{i-1}  = \max( \frac {F_i} { F_{i-1} } \cdot S_{j+1} - S_j )<br>$$</p>
 <p>设$k=\frac{F_{i-1}}{F_i}$,$x=S_j+1$,$y=S_j$</p>
-<p>然后就是转换为线性规划的题了。然后可以求出所有$$\Delta P<em>x$$，那么可以求出第m辆车的造车时间，然后由于是不停留的，再加上 $$\sum </em>{i=1}^n F_m \cdot T_i$$ 就可以求出最后答案。</p>
+<p>然后就是转换为线性规划的题了。然后可以求出所有$$\Delta P_x$$，那么可以求出第m辆车的造车时间，然后由于是不停留的，再加上 $$\sum _{i=1}^n F_m \cdot T_i$$ 就可以求出最后答案。</p>
 <h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p><strong>炸个屁掉</strong></p>
 
 
@@ -282,7 +301,7 @@
 <!-- Gallery -->
 <script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
 
-<!-- Disqus Comments -->
+<!-- Disqus Comments --><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 
 

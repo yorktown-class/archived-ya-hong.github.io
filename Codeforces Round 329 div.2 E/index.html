@@ -3,6 +3,25 @@
 
 <!-- Head tag -->
 <head>
+	<!-- hexo-inject:begin --><!-- hexo-inject:end --><!--Mathjax-->
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+            processEscapes: true,
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+    }); 
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';                 
+        }       
+    });
+    </script>
+    <script type="text/javascript" async
+        src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -69,7 +88,7 @@
     
 
 
-    <!-- favicon -->
+    <!-- favicon --><!-- hexo-inject:begin --><!-- hexo-inject:end -->
     
 	
 </head>
@@ -77,7 +96,7 @@
 
 <body>
 
-    <!-- Menu -->
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><!-- Menu -->
     <!-- Navigation -->
 <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
     <div class="container-fluid">
@@ -188,7 +207,7 @@
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <h3 id="题目：http-codeforces-com-contest-593-problem-E"><a href="#题目：http-codeforces-com-contest-593-problem-E" class="headerlink" title="题目：http://codeforces.com/contest/593/problem/E"></a>题目：<a href="http://codeforces.com/contest/593/problem/E" target="_blank" rel="external">http://codeforces.com/contest/593/problem/E</a></h3><h3 id="题解："><a href="#题解：" class="headerlink" title="题解："></a>题解：</h3><p>先考虑t较小时的情况。肯定是dp的做法。每个值都是由上一个dp值转移，如果两点相连就可以转移。<br>当$1&lt;x&lt;n$且$1&lt;y&lt;m$时：<br>$$dp[now][x][y]=dp[now][x-1][y]+dp[now][x+1][y]+dp[now][x][y-1]+dp[now][x][y+1]$$</p>
 <a id="more"></a>
-<p>如果用矩阵写的话，再记录一个path矩阵表示一个点到另一个点的方案总数。<br><br>就可以这样转移：<br>$$dp[now]=path<em>dp[now-1]$$<br>$$dp[now]=path^t</em>dp[now-t]$$</p>
+<p>如果用矩阵写的话，再记录一个path矩阵表示一个点到另一个点的方案总数。<br><br>就可以这样转移：<br>$$dp[now]=path \cdot dp[now-1]$$<br>$$dp[now]=path^t \cdot dp[now-t]$$</p>
 <p>想到这一步就可以了，用快速幂整一下就完了。</p>
 <h3 id="代码：http-codeforces-com-contest-593-submission-24814106"><a href="#代码：http-codeforces-com-contest-593-submission-24814106" class="headerlink" title="代码：http://codeforces.com/contest/593/submission/24814106"></a>代码：<a href="http://codeforces.com/contest/593/submission/24814106" target="_blank" rel="external">http://codeforces.com/contest/593/submission/24814106</a></h3>
 
@@ -257,7 +276,7 @@
 <!-- Gallery -->
 <script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
 
-<!-- Disqus Comments -->
+<!-- Disqus Comments --><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 
 
