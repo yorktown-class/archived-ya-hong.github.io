@@ -29,9 +29,6 @@
 
     <!--Description-->
     
-        <meta name="description" content="题目:http://codeforces.com/contest/569/problem/D题解：这个题题目就好难懂。。。
-由于满足传递性:那么可以用图来表示关系,那么题目就转化为求一个图内有多少个点不能到达自己（通过边）">
-    
 
     <!--Author-->
     
@@ -40,7 +37,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="Codeforces Round 315 div.2 D. Symmetric and Transitive"/>
+        <meta property="og:title" content="Yanghong&#39;s Blog"/>
     
 
     <!--Open Graph Description-->
@@ -51,7 +48,7 @@
 
     <!--Type page-->
     
-        <meta property="og:type" content="article" />
+        <meta property="og:type" content="website" />
     
 
     <!--Page Cover-->
@@ -62,7 +59,7 @@
 
     <!-- Title -->
     
-    <title>Codeforces Round 315 div.2 D. Symmetric and Transitive - Yanghong&#39;s Blog</title>
+    <title>page - Archives: 2017/3 - Yanghong&#39;s Blog</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
@@ -158,86 +155,77 @@
 </nav>
 
     <!-- Main Content -->
-    <!-- Page Header -->
-<!-- Set your background image for this header in your post front-matter: cover -->
+    
 
-<header class="intro-header" style="background-image: url('/images/cover/1.jpg')">
+<!-- Page Header -->
+<!-- Set your background image for this header in the theme's configuration: index_cover -->
+<header class="intro-header" style="background-image: url('/images/base/home.jpg')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="post-heading">
-                    <h1>Codeforces Round 315 div.2 D. Symmetric and Transitive</h1>
-                    
-                    <span class="meta">
-                        <!-- Date and Author -->
-                        
-                        
-                            2017-03-10
-                        
-                    </span>
+                <div class="site-heading">
+                    <h1>2017/3</h1>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Post Content -->
-<article>
-    <div class="container">
-        <div class="row">
-
-            <!-- Tags and categories -->
-           
-                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
-                    
-                        
-
-
-<a href="/tags/Codeforces/">#Codeforces</a> <a href="/tags/dp/">#dp</a>
-
-
-                    
-                </div>
-                <div class="col-lg-4 col-md-5 post-categories">
-                    
-                </div>
+<!-- Main Content -->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
             
-
-            <!-- Gallery -->
+                <div class="post-preview">
+    <a href="/Codeforces Round 336 div.2 D/">
+        <h1 class="post-title archive">
+            Codeforces Round 336 div.2 D. Zuma
+        </h1>
+    </a>
+    <p class="post-meta archive">
+        <!-- Date and Author -->
+        
+        2017-03-10
+    </p>
+</div>
             
-
-            <!-- Post Main Content -->
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <h3 id="题目-http-codeforces-com-contest-569-problem-D"><a href="#题目-http-codeforces-com-contest-569-problem-D" class="headerlink" title="题目:http://codeforces.com/contest/569/problem/D"></a>题目:<a href="http://codeforces.com/contest/569/problem/D" target="_blank" rel="external">http://codeforces.com/contest/569/problem/D</a></h3><h3 id="题解："><a href="#题解：" class="headerlink" title="题解："></a>题解：</h3><p>这个题题目就好难懂。。。</p>
-<p>由于满足传递性:<br><br>那么可以用图来表示关系,<br><br>那么题目就转化为求一个图内有多少个点不能到达自己（通过边）</p>
-<a id="more"></a>
-<p>由于满足对称性：<br></p>
-<ol>
-<li>那么一个连通块内的点都能互相到达，<br><br>所以必须要某些点孤立出来，保证不满足自反性。</li>
-<li>且一个联通块就代表一种关系集合（虽然连边方式有很多种,但是通过对称性和传递性把边补完则边集合相同，所以关系集合也相同）。</li>
-</ol>
-<p>所以剩下的问题就转化为求不同联通块划分方法,就是求n个元素不同分组方法。</p>
-<p>定义$dp[x]$为x个元素的不同分组方法。</p>
-<p>设现在有n个数。<br><br>当加入一个数的时候，<br><br>若此数独立一个集合，那么就有 $dp[n]$ 种方案。<br><br>若此数和另一个数结合成一个集合，就有 $C[n][n-1] \cdot dp[n-1]$ 种方案。<br><br>若此数和另x个数结合成一个集合，就有 $C[n][n-x] \cdot dp[n-x]$ 种方案。<br><br>那么，可以得出dp[n+1]的递推式：<br>$$dp[n+1]=\sum_{i=0}^{n-1} C[n][n-i] \cdot dp[n-i]$$</p>
-<p>而这个就是贝尔数。</p>
-<p>（参考：<a href="[https://zh.wikipedia.org/wiki/%E8%B4%9D%E5%B0%94%E6%95%B0">https://zh.wikipedia.org/wiki/%E8%B4%9D%E5%B0%94%E6%95%B0</a> ， <a href="http://baike.baidu.com/view/4084060.htm" target="_blank" rel="external">http://baike.baidu.com/view/4084060.htm</a> ）</p>
-<p>那么剩下就是枚举有几个点孤立就可了。<br>$$res=\sum_{i=1}^n C[n][n-i] \cdot dp[n-i]$$<br>就可以解决了。</p>
-
-
-                
-            </div>
-
-            <!-- Comments -->
+                <div class="post-preview">
+    <a href="/hello-world/">
+        <h1 class="post-title archive">
+            Hello World
+        </h1>
+    </a>
+    <p class="post-meta archive">
+        <!-- Date and Author -->
+        
+        2017-03-10
+    </p>
+</div>
             
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    
-
-
-                </div>
+                <div class="post-preview">
+    <a href="/Codeforces Round 315 div.2 D/">
+        <h1 class="post-title archive">
+            Codeforces Round 315 div.2 D. Symmetric and Transitive
+        </h1>
+    </a>
+    <p class="post-meta archive">
+        <!-- Date and Author -->
+        
+        2017-03-10
+    </p>
+</div>
             
+            <div class="archive-before-pagination"></div>
+            <ul class="pager">
+    
+        <li class="previous"><a href="/archives/2017/03/page/2/">&larr;  Newer Posts</a></li>
+    
+    
+</ul>
         </div>
     </div>
-</article>
+</div>
+
 
     <!-- Footer -->
     <hr />

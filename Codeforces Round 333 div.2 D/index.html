@@ -30,7 +30,7 @@
     <!--Description-->
     
         <meta name="description" content="题目：http://codeforces.com/contest/602/problem/D题意：给出n个数，和m个询问。每个询问包含两个数L和R。
-定义区间的最大斜率为 $\max\lceil\frac{|h[i]-h[j]|} {j-i}\rceil\ \ \ \ \ (L&amp;lt;=i&amp;lt;j&amp;lt;=R)$ 。
+定义区间的最大斜率为 $\max\lceil\frac{|h[i]-h[j]|} {j-i}\rceil     (L&amp;lt;=i&amp;lt;j&amp;lt;=R)$ 。
 对每个询问输出所有子区间的区间的最大斜率和。">
     
 
@@ -90,7 +90,9 @@
     
 
 
-    <!-- favicon --><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+    <!-- favicon -->
+    
+    <link rel="icon" href="images/base/favicon.ico"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
     
 	
 </head>
@@ -171,7 +173,7 @@
                         <!-- Date and Author -->
                         
                         
-                            2017-05-29
+                            2017-03-10
                         
                     </span>
                 </div>
@@ -208,7 +210,7 @@
             <!-- Post Main Content -->
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <h3 id="题目：http-codeforces-com-contest-602-problem-D"><a href="#题目：http-codeforces-com-contest-602-problem-D" class="headerlink" title="题目：http://codeforces.com/contest/602/problem/D"></a>题目：<a href="http://codeforces.com/contest/602/problem/D" target="_blank" rel="external">http://codeforces.com/contest/602/problem/D</a></h3><h3 id="题意："><a href="#题意：" class="headerlink" title="题意："></a>题意：</h3><p>给出n个数，和m个询问。每个询问包含两个数L和R。</p>
-<p>定义区间的最大斜率为 $\max\lceil\frac{|h[i]-h[j]|} {j-i}\rceil\ \ \ \ \ (L&lt;=i&lt;j&lt;=R)$ 。</p>
+<p>定义区间的最大斜率为 $\max\lceil\frac{|h[i]-h[j]|} {j-i}\rceil     (L&lt;=i&lt;j&lt;=R)$ 。</p>
 <p>对每个询问输出所有子区间的区间的最大斜率和。</p>
 <a id="more"></a>
 <h3 id="题解："><a href="#题解：" class="headerlink" title="题解："></a>题解：</h3><p>斜率的最大值一定是在相邻的两点处取得。设一个区间的最大斜率为 $\lceil \frac {val} {len} \rceil$ （$len \ge 2$) ，它可以分成$len$个两点组合。</p>
