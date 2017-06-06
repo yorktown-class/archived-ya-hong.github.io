@@ -29,6 +29,9 @@
 
     <!--Description-->
     
+        <meta name="description" content="Task1由于受到了上一次考试的影响，我感觉第一题肯定要害人。。。。
+然后想了很久之后觉得一开始想的就是对的，先枚举每个人的顺序，再dp一下就好了。">
+    
 
     <!--Author-->
     
@@ -37,7 +40,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="Yanghong&#39;s Blog"/>
+        <meta property="og:title" content="20170524练习赛"/>
     
 
     <!--Open Graph Description-->
@@ -48,7 +51,7 @@
 
     <!--Type page-->
     
-        <meta property="og:type" content="website" />
+        <meta property="og:type" content="article" />
     
 
     <!--Page Cover-->
@@ -59,7 +62,7 @@
 
     <!-- Title -->
     
-    <title>Archives - Yanghong&#39;s Blog</title>
+    <title>20170524练习赛 - Yanghong&#39;s Blog</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
@@ -155,168 +158,100 @@
 </nav>
 
     <!-- Main Content -->
-    
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
 
-<!-- Page Header -->
-<!-- Set your background image for this header in the theme's configuration: index_cover -->
-<header class="intro-header" style="background-image: url('/images/base/home.jpg')">
+<header class="intro-header" style="background-image: url('/images/cover/4.jpg')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1>Archives</h1>
+                <div class="post-heading">
+                    <h1>20170524练习赛</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2017-05-24
+                        
+                    </span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/总结/">#总结</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                </div>
             
-                <div class="post-preview">
-    <a href="/20170605训练赛/">
-        <h1 class="post-title archive">
-            20170605训练赛
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-06-06
-    </p>
-</div>
+
+            <!-- Gallery -->
             
-                <div class="post-preview">
-    <a href="/20170524练习赛/">
-        <h1 class="post-title archive">
-            20170524练习赛
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-05-24
-    </p>
-</div>
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h1 id="Task1"><a href="#Task1" class="headerlink" title="Task1"></a>Task1</h1><p>由于受到了上一次考试的影响，我感觉第一题肯定要害人。。。。</p>
+<p>然后想了很久之后觉得一开始想的就是对的，先枚举每个人的顺序，再dp一下就好了。</p>
+<a id="more"></a>
+<h1 id="Task2"><a href="#Task2" class="headerlink" title="Task2"></a>Task2</h1><p>靠近的区域的所有控制点的值都减1，远离的区域所有控制的点的值都加1。</p>
+<p>一开始想的很复杂，觉得要分9块区域做，同时维护区域里的控制点的个数。</p>
+<p><img src="/images/20170524练习赛pic1.png" alt=""></p>
+<p>这样不仅复杂，而且维护控制点个数用的二维前缀和内存也开不下。</p>
+<p>但是上下和左右其实是可以独立开的，就变成这样子了：</p>
+<p><img src="/images/20170524练习赛pic2.png" alt=""></p>
+<p><img src="/images/20170524练习赛pic3.png" alt=""></p>
+<p>这样就好很多了，而且只需要记录一列（或一行）的个数就可以了。</p>
+<p>这样应该是可以的了，但是由于各种原因，一个鬼畜的地方写错了。然后看不出来，不得不对拍一下，然后暴力又写错了。。。。。活活整了一个小时。</p>
+<p>（<del>然后这道题还有nlogn的臭臭算法</del>）</p>
+<h1 id="Task3"><a href="#Task3" class="headerlink" title="Task3"></a>Task3</h1><p>这道题应该是斜率优化的，但是由于考试的时候还不会这么搞，就整了一个二分的算法。</p>
+<p>主要是推公式:<br>$$<br>\frac{sum(R)-sum(L)}{R-L} \ge res<br>$$</p>
+<p>$$<br>sum(R)-sum(L) \ge res \cdot (R-L)<br>$$</p>
+<p>$$<br>(sum(R)-R \cdot res) - (sum(L-1) - L \cdot res ) \ge 0<br>$$</p>
+<p>那么就把 $$sum(x)-x \cdot res$$ 作为一个整体,对于二分出的一个答案$$res$$，只要找到一对$L$，$R$满足上面的式子而且$R-L$大于$K$就说明答案可行。</p>
+<h1 id="Task4"><a href="#Task4" class="headerlink" title="Task4"></a>Task4</h1><p>这题只能用斜率优化了，但是由于考试的时候还不会这么搞。。。。然后就炸了。</p>
+<p>主要还是推公式。。。。</p>
+<p>设 $P_i$ 为第 $i$ 辆车开始制造的时间，$$S_x = \sum_{k=1}^x T_x$$ 。</p>
+<p>对于第 $i$ 辆车,枚举每个人 $j$ ,就有：<br>$$<br>P_i + S_j \cdot F_i \ge P_{i-1} + S_{j+1} \cdot F_{i-1}<br>$$</p>
+<p>$$<br>\Delta P_{i-1} = P_i - P{i-1}  \ge S_{j+1} \cdot F_{i-1} - S_j \cdot F_{i-1}<br>$$</p>
+<p>$$<br>\Delta P_{i-1}  = \max( S_j+1 \cdot F_{i-1} - S_j \cdot F_{i-1} )<br>$$</p>
+<p>$$<br>\Delta P_{i-1}  = \max( \frac {F_i} { F_{i-1} } \cdot S_{j+1} - S_j )<br>$$</p>
+<p>设$k=\frac{F_{i-1}}{F_i}$,$x=S_j+1$,$y=S_j$</p>
+<p>然后就是转换为线性规划的题了。然后可以求出所有$$\Delta P_x$$，那么可以求出第m辆车的造车时间，然后由于是不停留的，再加上 $$\sum _{i=1}^n F_m \cdot T_i$$ 就可以求出最后答案。</p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p><strong>炸个屁掉</strong></p>
+
+
+                
+            </div>
+
+            <!-- Comments -->
             
-                <div class="post-preview">
-    <a href="/20170521练习赛/">
-        <h1 class="post-title archive">
-            20170521练习赛
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-05-21
-    </p>
-</div>
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
             
-                <div class="post-preview">
-    <a href="/20170517练习赛/">
-        <h1 class="post-title archive">
-            20170517练习赛
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-05-17
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/20170514练习赛/">
-        <h1 class="post-title archive">
-            20170514练习赛 (COCIcontest5)
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-05-14
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2017-3-11离线赛总结/">
-        <h1 class="post-title archive">
-            2017-3-11离线赛总结
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-03-11
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/Codeforces Round 307 div.2 D/">
-        <h1 class="post-title archive">
-            Codeforces Round 307 div.2 D. GukiZ and Binary Operations
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-03-10
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/Codeforces Round 307 div.2 C/">
-        <h1 class="post-title archive">
-            Codeforces Round 307 div.2 C. GukiZ hates Boxes
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-03-10
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/Codeforces Round 313 div.2 D/">
-        <h1 class="post-title archive">
-            Codeforces Round 313 div.2 D. Equivalent Strings
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-03-10
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/Codeforces Round 313 div.2 E/">
-        <h1 class="post-title archive">
-            Codeforces Round 313 div.2 E. Gerald and Giant Chess
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-03-10
-    </p>
-</div>
-            
-            <div class="archive-before-pagination"></div>
-            <ul class="pager">
-    
-    
-        <li class="next"><a href="/archives/page/2/">Older Posts  &rarr;</a></li>
-    
-</ul>
         </div>
     </div>
-</div>
-
+</article>
 
     <!-- Footer -->
     <hr />

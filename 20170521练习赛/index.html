@@ -29,6 +29,8 @@
 
     <!--Description-->
     
+        <meta name="description" content="这次画风突变啊。">
+    
 
     <!--Author-->
     
@@ -37,7 +39,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="Yanghong&#39;s Blog"/>
+        <meta property="og:title" content="20170521练习赛"/>
     
 
     <!--Open Graph Description-->
@@ -48,7 +50,7 @@
 
     <!--Type page-->
     
-        <meta property="og:type" content="website" />
+        <meta property="og:type" content="article" />
     
 
     <!--Page Cover-->
@@ -59,7 +61,7 @@
 
     <!-- Title -->
     
-    <title>Archives - Yanghong&#39;s Blog</title>
+    <title>20170521练习赛 - Yanghong&#39;s Blog</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
@@ -155,168 +157,85 @@
 </nav>
 
     <!-- Main Content -->
-    
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
 
-<!-- Page Header -->
-<!-- Set your background image for this header in the theme's configuration: index_cover -->
-<header class="intro-header" style="background-image: url('/images/base/home.jpg')">
+<header class="intro-header" style="background-image: url('/images/cover/3.jpg')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1>Archives</h1>
+                <div class="post-heading">
+                    <h1>20170521练习赛</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2017-05-21
+                        
+                    </span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/总结/">#总结</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                </div>
             
-                <div class="post-preview">
-    <a href="/20170605训练赛/">
-        <h1 class="post-title archive">
-            20170605训练赛
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-06-06
-    </p>
-</div>
+
+            <!-- Gallery -->
             
-                <div class="post-preview">
-    <a href="/20170524练习赛/">
-        <h1 class="post-title archive">
-            20170524练习赛
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-05-24
-    </p>
-</div>
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <p>这次画风突变啊。</p>
+<a id="more"></a>
+<h1 id="Task1"><a href="#Task1" class="headerlink" title="Task1"></a>Task1</h1><p>可以先将每一列砍掉一定高度使得最后答案变成一条直线，代码会简单很多。</p>
+<p>最后答案高度从小到大考虑。高度每增加1，大于等于此高度的列可以少移除一个方块，对答案的贡献是-1，小于此高度的列需要多增加一个方块，对答案的贡献是1。及高于答案高度的列的个数为upper，小于的列的个数为lower，那么每一次的变化量为lower-upper。随着答案高度变大，超过某一个列的高度时，lower增大1，upper减小1，变化量增大2。</p>
+<p><img src="/images/20170521练习赛pic1.png" alt=""></p>
+<p>然后可以画出答案的导函数大概就是这样的。只要找到变化量为0的位置，就可以求出极值，而零点对应的区间就是高度第$\frac n2$的列的高度到高度第$\frac{n}{2+1}$的列的高度-1（设n为偶数）。</p>
+<p>解决两堆积木的问题就是把两个导函数加起来，找到零点。而这种情况下，就是 第n的高度 到 第n+1的高度-1。</p>
+<!--more-->
+<h1 id="Task2"><a href="#Task2" class="headerlink" title="Task2"></a>Task2</h1><p>第二道题应该没有第一题难吧，但是搞错题意乱整了好久。而且跟正解比起来我的想法还是很简单暴力。但是简单的想法总是容易想到的。</p>
+<p>可以把这些圆构造成一颗树（儿子中不能有儿子的儿子）， 然后就可以$O(n)$解决了。</p>
+<p>建树的过程是一个左右端点的二维的问题，而且要时时删除已经成为儿子的圆。那么可以用set来维护。先sort维护一维，再用set维护另一维，这样左右端点就都维护好了，然后每次删除所有儿子就好了。</p>
+<h1 id="Task3"><a href="#Task3" class="headerlink" title="Task3"></a>Task3</h1><p>一开始的时候想了很多（这种给公式的题目总是容易让人多想），然后迟迟没有敲60分的代码。最后觉得再也想不出来了才写了60分，然后罚时就爆炸了。。。。。。。</p>
+<p>其实如果想到 meet in the middle 就比较容易了（虽然这个逆元我估计不会求），但是由于这种题目做的少，而且从未主动写过这个方法，然后比赛的时候根本想不到。</p>
+<h1 id="Task4"><a href="#Task4" class="headerlink" title="Task4"></a>Task4</h1>
+
+                
+            </div>
+
+            <!-- Comments -->
             
-                <div class="post-preview">
-    <a href="/20170521练习赛/">
-        <h1 class="post-title archive">
-            20170521练习赛
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-05-21
-    </p>
-</div>
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
             
-                <div class="post-preview">
-    <a href="/20170517练习赛/">
-        <h1 class="post-title archive">
-            20170517练习赛
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-05-17
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/20170514练习赛/">
-        <h1 class="post-title archive">
-            20170514练习赛 (COCIcontest5)
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-05-14
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2017-3-11离线赛总结/">
-        <h1 class="post-title archive">
-            2017-3-11离线赛总结
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-03-11
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/Codeforces Round 307 div.2 D/">
-        <h1 class="post-title archive">
-            Codeforces Round 307 div.2 D. GukiZ and Binary Operations
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-03-10
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/Codeforces Round 307 div.2 C/">
-        <h1 class="post-title archive">
-            Codeforces Round 307 div.2 C. GukiZ hates Boxes
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-03-10
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/Codeforces Round 313 div.2 D/">
-        <h1 class="post-title archive">
-            Codeforces Round 313 div.2 D. Equivalent Strings
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-03-10
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/Codeforces Round 313 div.2 E/">
-        <h1 class="post-title archive">
-            Codeforces Round 313 div.2 E. Gerald and Giant Chess
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-03-10
-    </p>
-</div>
-            
-            <div class="archive-before-pagination"></div>
-            <ul class="pager">
-    
-    
-        <li class="next"><a href="/archives/page/2/">Older Posts  &rarr;</a></li>
-    
-</ul>
         </div>
     </div>
-</div>
-
+</article>
 
     <!-- Footer -->
     <hr />

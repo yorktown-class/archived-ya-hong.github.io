@@ -29,6 +29,8 @@
 
     <!--Description-->
     
+        <meta name="description" content="题目：http://codeforces.com/contest/574/problem/D题解变化实质就是先一直等（因为这时候变化也没什么用）,再一步变成跟旁边一样矮，然后一个一个的减小高度。">
+    
 
     <!--Author-->
     
@@ -37,7 +39,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="Yanghong&#39;s Blog"/>
+        <meta property="og:title" content="Codeforces Round 318 div.2 D. Bear and Blocks"/>
     
 
     <!--Open Graph Description-->
@@ -48,7 +50,7 @@
 
     <!--Type page-->
     
-        <meta property="og:type" content="website" />
+        <meta property="og:type" content="article" />
     
 
     <!--Page Cover-->
@@ -59,7 +61,7 @@
 
     <!-- Title -->
     
-    <title>Archives - Yanghong&#39;s Blog</title>
+    <title>Codeforces Round 318 div.2 D. Bear and Blocks - Yanghong&#39;s Blog</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
@@ -155,168 +157,85 @@
 </nav>
 
     <!-- Main Content -->
-    
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
 
-<!-- Page Header -->
-<!-- Set your background image for this header in the theme's configuration: index_cover -->
-<header class="intro-header" style="background-image: url('/images/base/home.jpg')">
+<header class="intro-header" style="background-image: url('/images/cover/2.jpg')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1>Archives</h1>
+                <div class="post-heading">
+                    <h1>Codeforces Round 318 div.2 D. Bear and Blocks</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2017-03-10
+                        
+                    </span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/Codeforces/">#Codeforces</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                </div>
             
-                <div class="post-preview">
-    <a href="/20170605训练赛/">
-        <h1 class="post-title archive">
-            20170605训练赛
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-06-06
-    </p>
-</div>
+
+            <!-- Gallery -->
             
-                <div class="post-preview">
-    <a href="/20170524练习赛/">
-        <h1 class="post-title archive">
-            20170524练习赛
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-05-24
-    </p>
-</div>
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h3 id="题目：http-codeforces-com-contest-574-problem-D"><a href="#题目：http-codeforces-com-contest-574-problem-D" class="headerlink" title="题目：http://codeforces.com/contest/574/problem/D"></a>题目：<a href="http://codeforces.com/contest/574/problem/D" target="_blank" rel="external">http://codeforces.com/contest/574/problem/D</a></h3><h3 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h3><p>变化实质就是先一直等（因为这时候变化也没什么用）,再一步变成跟旁边一样矮，然后一个一个的减小高度。</p>
+<a id="more"></a>
+<p>然后看如何计算。<br><br>对于一个： <strong>XabcY</strong><br><br>（假设高度递减）<br>如果x要变得跟y一样高,那么就有以下几步：</p>
+<ol>
+<li>c 变得跟y一样高。</li>
+<li>b 变得跟y一样高。</li>
+<li>a 变得跟y一样高。</li>
+<li>X 变得跟y一样高。<br>然后X经过y步就变成了0.</li>
+</ol>
+<p>所以对于一个 x ,它变成 0 的时间为：<br>$$<br>MinX= \min _{i=0}^{n+1} abs(i-x)+h[i]<br>$$</p>
+<p>而它可以写成：<br>$$<br>MinX=min(<br>\min_{i=0}^{X} X+(h[i]-i),<br>\min_{i=X+1}^n n+1-X+(h[i]-(n+1-i))<br>)<br>$$<br>这个显然只要正反扫描两边就可求出。</p>
+<p>然后：<br>$$<br>res=\min_{i=1}^n MinI<br>$$</p>
+<p>就完成了。</p>
+<h3 id="代码：http-codeforces-com-contest-574-submission-24628101"><a href="#代码：http-codeforces-com-contest-574-submission-24628101" class="headerlink" title="代码：http://codeforces.com/contest/574/submission/24628101"></a>代码：<a href="http://codeforces.com/contest/574/submission/24628101" target="_blank" rel="external">http://codeforces.com/contest/574/submission/24628101</a></h3>
+
+                
+            </div>
+
+            <!-- Comments -->
             
-                <div class="post-preview">
-    <a href="/20170521练习赛/">
-        <h1 class="post-title archive">
-            20170521练习赛
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-05-21
-    </p>
-</div>
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
             
-                <div class="post-preview">
-    <a href="/20170517练习赛/">
-        <h1 class="post-title archive">
-            20170517练习赛
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-05-17
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/20170514练习赛/">
-        <h1 class="post-title archive">
-            20170514练习赛 (COCIcontest5)
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-05-14
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2017-3-11离线赛总结/">
-        <h1 class="post-title archive">
-            2017-3-11离线赛总结
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-03-11
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/Codeforces Round 307 div.2 D/">
-        <h1 class="post-title archive">
-            Codeforces Round 307 div.2 D. GukiZ and Binary Operations
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-03-10
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/Codeforces Round 307 div.2 C/">
-        <h1 class="post-title archive">
-            Codeforces Round 307 div.2 C. GukiZ hates Boxes
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-03-10
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/Codeforces Round 313 div.2 D/">
-        <h1 class="post-title archive">
-            Codeforces Round 313 div.2 D. Equivalent Strings
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-03-10
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/Codeforces Round 313 div.2 E/">
-        <h1 class="post-title archive">
-            Codeforces Round 313 div.2 E. Gerald and Giant Chess
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-03-10
-    </p>
-</div>
-            
-            <div class="archive-before-pagination"></div>
-            <ul class="pager">
-    
-    
-        <li class="next"><a href="/archives/page/2/">Older Posts  &rarr;</a></li>
-    
-</ul>
         </div>
     </div>
-</div>
-
+</article>
 
     <!-- Footer -->
     <hr />

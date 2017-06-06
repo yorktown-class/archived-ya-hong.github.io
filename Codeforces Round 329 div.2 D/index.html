@@ -29,6 +29,9 @@
 
     <!--Description-->
     
+        <meta name="description" content="题目：http://codeforces.com/contest/593/problem/D题解：由于条件没看清，没看到边权不会变大，（这样并查集就可以用了）就直接敲了一个树链刨分加线段树。-_-
+就是普通的树链刨分加线段树……">
+    
 
     <!--Author-->
     
@@ -37,7 +40,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="Yanghong&#39;s Blog"/>
+        <meta property="og:title" content="Codeforces Round 329 div.2 D. Happy Tree Party"/>
     
 
     <!--Open Graph Description-->
@@ -48,7 +51,7 @@
 
     <!--Type page-->
     
-        <meta property="og:type" content="website" />
+        <meta property="og:type" content="article" />
     
 
     <!--Page Cover-->
@@ -59,7 +62,7 @@
 
     <!-- Title -->
     
-    <title>Archives - Yanghong&#39;s Blog</title>
+    <title>Codeforces Round 329 div.2 D. Happy Tree Party - Yanghong&#39;s Blog</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
@@ -155,168 +158,84 @@
 </nav>
 
     <!-- Main Content -->
-    
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
 
-<!-- Page Header -->
-<!-- Set your background image for this header in the theme's configuration: index_cover -->
-<header class="intro-header" style="background-image: url('/images/base/home.jpg')">
+<header class="intro-header" style="background-image: url('/images/cover/3.jpg')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1>Archives</h1>
+                <div class="post-heading">
+                    <h1>Codeforces Round 329 div.2 D. Happy Tree Party</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2017-03-10
+                        
+                    </span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/Codeforces/">#Codeforces</a> <a href="/tags/树/">#树</a> <a href="/tags/树链刨分/">#树链刨分</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                </div>
             
-                <div class="post-preview">
-    <a href="/20170605训练赛/">
-        <h1 class="post-title archive">
-            20170605训练赛
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-06-06
-    </p>
-</div>
+
+            <!-- Gallery -->
             
-                <div class="post-preview">
-    <a href="/20170524练习赛/">
-        <h1 class="post-title archive">
-            20170524练习赛
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-05-24
-    </p>
-</div>
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h3 id="题目：http-codeforces-com-contest-593-problem-D"><a href="#题目：http-codeforces-com-contest-593-problem-D" class="headerlink" title="题目：http://codeforces.com/contest/593/problem/D"></a>题目：<a href="http://codeforces.com/contest/593/problem/D" target="_blank" rel="external">http://codeforces.com/contest/593/problem/D</a></h3><h3 id="题解："><a href="#题解：" class="headerlink" title="题解："></a>题解：</h3><p>由于条件没看清，没看到边权不会变大，（这样并查集就可以用了）<br>就直接敲了一个树链刨分加线段树。-_-</p>
+<p>就是普通的树链刨分加线段树……</p>
+<a id="more"></a>
+<p>唯一特别的是，乘法运算时要注意一下：当乘积超过$10^{18}$时，具体值就没有意义了，除任何数结果都是0，那么答案记为-1。<br><br>对于$A \cdot B$分两种种情况讨论:</p>
+<ol>
+<li>$A=-1$ 或 $B=-1$。这时答案为-1</li>
+<li>$A \cdot B \ge 10^{18}$ 答案也是-1，判断标准是 $10^{18}/A/B$（整除)，是否为0  （由于$A/B/C=A/(B*C))$</li>
+<li>就是$A \cdot B$了。</li>
+</ol>
+<p>然后建好线段树就好了。求出所有边权乘积，然后除以它就可以了。</p>
+<p>但是在整除的情况下$A/B/C$是否等于$A/(B \cdot C)$呢？其实是相等的。<br><br>设<br>$$ A_1/B/C=A_2/(B  \cdot  C)=k $$<br><br><br>$$(A_1/B)_{max}=(k+1) \cdot C-1$$<br>$$A_{1max}=((k+1)  \cdot  C-1+1) \cdot B-1=k\cdot B \cdot C+B \cdot C-1$$<br>$$A_{1min}=k \cdot B \cdot C$$<br><br><br>$$ A_{2max}=(k+1)(B \cdot C)-1=k \cdot B \cdot C+B \cdot C-1 $$<br>$$A_{2min}=k \cdot B \cdot C$$<br><br><br>任意答案对应$A_1$和$A_2$的取值范围相同，所以$A_1=A_2$时，答案相同。</p>
+<p>那么答案就可以直接计算了。</p>
+<h3 id="代码：http-codeforces-com-contest-593-submission-24801999"><a href="#代码：http-codeforces-com-contest-593-submission-24801999" class="headerlink" title="代码：http://codeforces.com/contest/593/submission/24801999"></a>代码：<a href="http://codeforces.com/contest/593/submission/24801999" target="_blank" rel="external">http://codeforces.com/contest/593/submission/24801999</a></h3>
+
+                
+            </div>
+
+            <!-- Comments -->
             
-                <div class="post-preview">
-    <a href="/20170521练习赛/">
-        <h1 class="post-title archive">
-            20170521练习赛
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-05-21
-    </p>
-</div>
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
             
-                <div class="post-preview">
-    <a href="/20170517练习赛/">
-        <h1 class="post-title archive">
-            20170517练习赛
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-05-17
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/20170514练习赛/">
-        <h1 class="post-title archive">
-            20170514练习赛 (COCIcontest5)
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-05-14
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2017-3-11离线赛总结/">
-        <h1 class="post-title archive">
-            2017-3-11离线赛总结
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-03-11
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/Codeforces Round 307 div.2 D/">
-        <h1 class="post-title archive">
-            Codeforces Round 307 div.2 D. GukiZ and Binary Operations
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-03-10
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/Codeforces Round 307 div.2 C/">
-        <h1 class="post-title archive">
-            Codeforces Round 307 div.2 C. GukiZ hates Boxes
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-03-10
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/Codeforces Round 313 div.2 D/">
-        <h1 class="post-title archive">
-            Codeforces Round 313 div.2 D. Equivalent Strings
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-03-10
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/Codeforces Round 313 div.2 E/">
-        <h1 class="post-title archive">
-            Codeforces Round 313 div.2 E. Gerald and Giant Chess
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-03-10
-    </p>
-</div>
-            
-            <div class="archive-before-pagination"></div>
-            <ul class="pager">
-    
-    
-        <li class="next"><a href="/archives/page/2/">Older Posts  &rarr;</a></li>
-    
-</ul>
         </div>
     </div>
-</div>
-
+</article>
 
     <!-- Footer -->
     <hr />

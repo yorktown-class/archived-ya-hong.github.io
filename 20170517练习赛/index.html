@@ -29,6 +29,8 @@
 
     <!--Description-->
     
+        <meta name="description" content="Task1A题是一道模拟题，但是我用dp的方法过了。。。。。。虽然慢了很多但是好像dp可以少考虑一些情况（不容易写错）。">
+    
 
     <!--Author-->
     
@@ -37,7 +39,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="Yanghong&#39;s Blog"/>
+        <meta property="og:title" content="20170517练习赛"/>
     
 
     <!--Open Graph Description-->
@@ -48,7 +50,7 @@
 
     <!--Type page-->
     
-        <meta property="og:type" content="website" />
+        <meta property="og:type" content="article" />
     
 
     <!--Page Cover-->
@@ -59,7 +61,7 @@
 
     <!-- Title -->
     
-    <title>Archives - Yanghong&#39;s Blog</title>
+    <title>20170517练习赛 - Yanghong&#39;s Blog</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
@@ -155,168 +157,79 @@
 </nav>
 
     <!-- Main Content -->
-    
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
 
-<!-- Page Header -->
-<!-- Set your background image for this header in the theme's configuration: index_cover -->
-<header class="intro-header" style="background-image: url('/images/base/home.jpg')">
+<header class="intro-header" style="background-image: url('/images/cover/2.jpg')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1>Archives</h1>
+                <div class="post-heading">
+                    <h1>20170517练习赛</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2017-05-17
+                        
+                    </span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/总结/">#总结</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                </div>
             
-                <div class="post-preview">
-    <a href="/20170605训练赛/">
-        <h1 class="post-title archive">
-            20170605训练赛
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-06-06
-    </p>
-</div>
+
+            <!-- Gallery -->
             
-                <div class="post-preview">
-    <a href="/20170524练习赛/">
-        <h1 class="post-title archive">
-            20170524练习赛
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-05-24
-    </p>
-</div>
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h1 id="Task1"><a href="#Task1" class="headerlink" title="Task1"></a>Task1</h1><p>A题是一道模拟题，但是我用dp的方法过了。。。。。。<br>虽然慢了很多但是好像dp可以少考虑一些情况（不容易写错）。</p>
+<a id="more"></a>
+<h1 id="Task2"><a href="#Task2" class="headerlink" title="Task2"></a>Task2</h1><p>又是一个奇怪的题目</p>
+<h1 id="Task3"><a href="#Task3" class="headerlink" title="Task3"></a>Task3</h1><p>又是一个模拟题。<br>简单的数位dp加恶心的高精。</p>
+<h1 id="Task4"><a href="#Task4" class="headerlink" title="Task4"></a>Task4</h1><p>一开始就直接去想BIT之类的做法了，用R个BIT维护每一行的情况，然后每次询问就查询每一行的最小值。复杂度是 $O(G \cdot R \cdot logS+G \cdot logS)$,就是 $O(G \cdot R \cdot logS)$。</p>
+<p>然后正解其实是直接暴力。。。。。<br>记录$mi[x],mx[x]$表示$[x,S]$的下标最小的苹果和$[1,x]$的下标最大的苹果。复杂度是$O(G \cdot R+G \cdot S)$ 。<br>其实应该要想到这种写法的，BIT也就是把查找和维护的复杂度平衡了一下，但是这道题如果用BIT那么查找复杂度就远远大于维护了，所以不如用查找O(1)而维护O(n)的暴力写法。（不过最后错误算法还是硬卡卡过去了，比赛的时候就没再想了）。</p>
+<h1 id="Task5"><a href="#Task5" class="headerlink" title="Task5"></a>Task5</h1><p>又是一道字符串，跟上次考试一样。不过这个是用AC自动机写，AC自动机也是赛后刚学</p>
+
+
+                
+            </div>
+
+            <!-- Comments -->
             
-                <div class="post-preview">
-    <a href="/20170521练习赛/">
-        <h1 class="post-title archive">
-            20170521练习赛
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-05-21
-    </p>
-</div>
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
             
-                <div class="post-preview">
-    <a href="/20170517练习赛/">
-        <h1 class="post-title archive">
-            20170517练习赛
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-05-17
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/20170514练习赛/">
-        <h1 class="post-title archive">
-            20170514练习赛 (COCIcontest5)
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-05-14
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2017-3-11离线赛总结/">
-        <h1 class="post-title archive">
-            2017-3-11离线赛总结
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-03-11
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/Codeforces Round 307 div.2 D/">
-        <h1 class="post-title archive">
-            Codeforces Round 307 div.2 D. GukiZ and Binary Operations
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-03-10
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/Codeforces Round 307 div.2 C/">
-        <h1 class="post-title archive">
-            Codeforces Round 307 div.2 C. GukiZ hates Boxes
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-03-10
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/Codeforces Round 313 div.2 D/">
-        <h1 class="post-title archive">
-            Codeforces Round 313 div.2 D. Equivalent Strings
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-03-10
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/Codeforces Round 313 div.2 E/">
-        <h1 class="post-title archive">
-            Codeforces Round 313 div.2 E. Gerald and Giant Chess
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-03-10
-    </p>
-</div>
-            
-            <div class="archive-before-pagination"></div>
-            <ul class="pager">
-    
-    
-        <li class="next"><a href="/archives/page/2/">Older Posts  &rarr;</a></li>
-    
-</ul>
         </div>
     </div>
-</div>
-
+</article>
 
     <!-- Footer -->
     <hr />

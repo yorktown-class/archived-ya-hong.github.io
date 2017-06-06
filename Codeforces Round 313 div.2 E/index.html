@@ -29,6 +29,9 @@
 
     <!--Description-->
     
+        <meta name="description" content="题目：http://codeforces.com/contest/560/problem/E
+题解：肯定是组合。如果只考虑一个黑点，那么总方案数减去起始位置到黑点的方案数 乘上 从黑点到终点的方案数 就是不能走的方案数。那么总方案数减去它就好了。">
+    
 
     <!--Author-->
     
@@ -37,7 +40,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="Yanghong&#39;s Blog"/>
+        <meta property="og:title" content="Codeforces Round 313 div.2 E. Gerald and Giant Chess"/>
     
 
     <!--Open Graph Description-->
@@ -48,7 +51,7 @@
 
     <!--Type page-->
     
-        <meta property="og:type" content="website" />
+        <meta property="og:type" content="article" />
     
 
     <!--Page Cover-->
@@ -59,7 +62,7 @@
 
     <!-- Title -->
     
-    <title>Archives - Yanghong&#39;s Blog</title>
+    <title>Codeforces Round 313 div.2 E. Gerald and Giant Chess - Yanghong&#39;s Blog</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
@@ -155,168 +158,80 @@
 </nav>
 
     <!-- Main Content -->
-    
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
 
-<!-- Page Header -->
-<!-- Set your background image for this header in the theme's configuration: index_cover -->
-<header class="intro-header" style="background-image: url('/images/base/home.jpg')">
+<header class="intro-header" style="background-image: url('/images/cover/4.jpg')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1>Archives</h1>
+                <div class="post-heading">
+                    <h1>Codeforces Round 313 div.2 E. Gerald and Giant Chess</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2017-03-10
+                        
+                    </span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/Codeforces/">#Codeforces</a> <a href="/tags/dp/">#dp</a> <a href="/tags/组合/">#组合</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                </div>
             
-                <div class="post-preview">
-    <a href="/20170605训练赛/">
-        <h1 class="post-title archive">
-            20170605训练赛
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-06-06
-    </p>
-</div>
+
+            <!-- Gallery -->
             
-                <div class="post-preview">
-    <a href="/20170524练习赛/">
-        <h1 class="post-title archive">
-            20170524练习赛
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-05-24
-    </p>
-</div>
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h3 id="题目：http-codeforces-com-contest-560-problem-E"><a href="#题目：http-codeforces-com-contest-560-problem-E" class="headerlink" title="题目：http://codeforces.com/contest/560/problem/E"></a>题目：<a href="http://codeforces.com/contest/560/problem/E" target="_blank" rel="external">http://codeforces.com/contest/560/problem/E</a></h3><p><br></p>
+<h3 id="题解："><a href="#题解：" class="headerlink" title="题解："></a>题解：</h3><p>肯定是组合。<br><br>如果只考虑一个黑点，那么<code>总方案数减去起始位置到黑点的方案数</code> <code>乘上</code> <code>从黑点到终点的方案数</code> 就是不能走的方案数。<br><br>那么总方案数减去它就好了。</p>
+<a id="more"></a>
+<p>考虑有多个点的情况。</p>
+<p>如果就是按照上面的减下去，显然会有重复的。一条经过两个黑点的路径会被减去两次。<br><br>那么就是要去寻找方法去重了。</p>
+<p>那么只要规定一个可以计算又可以不走到重复点的“走法”就好了。</p>
+<p>可以这么规定：<br><br>对于一个黑点的所有路径，就是不经过儿子黑点（x，y都比它的x，y小的黑点）,然后到达终点的路径总数。（这个还是好想的，正确性也是显然的）<br><br>结果发现这个过程和最上面一个黑点的情况是一样的，那么就是把每个黑点都当成一次终点分别计算一次就好了。（其实递归的想法，可以更简单的得到这个结论，只不过我是这么想下来的）</p>
+<p>最后想明白还是很简单的。<br></p>
+<h3 id="代码也很简单：http-codeforces-com-contest-560-submission-24591210"><a href="#代码也很简单：http-codeforces-com-contest-560-submission-24591210" class="headerlink" title="代码也很简单：http://codeforces.com/contest/560/submission/24591210"></a>代码也很简单：<a href="http://codeforces.com/contest/560/submission/24591210" target="_blank" rel="external">http://codeforces.com/contest/560/submission/24591210</a></h3>
+
+                
+            </div>
+
+            <!-- Comments -->
             
-                <div class="post-preview">
-    <a href="/20170521练习赛/">
-        <h1 class="post-title archive">
-            20170521练习赛
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-05-21
-    </p>
-</div>
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
             
-                <div class="post-preview">
-    <a href="/20170517练习赛/">
-        <h1 class="post-title archive">
-            20170517练习赛
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-05-17
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/20170514练习赛/">
-        <h1 class="post-title archive">
-            20170514练习赛 (COCIcontest5)
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-05-14
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2017-3-11离线赛总结/">
-        <h1 class="post-title archive">
-            2017-3-11离线赛总结
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-03-11
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/Codeforces Round 307 div.2 D/">
-        <h1 class="post-title archive">
-            Codeforces Round 307 div.2 D. GukiZ and Binary Operations
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-03-10
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/Codeforces Round 307 div.2 C/">
-        <h1 class="post-title archive">
-            Codeforces Round 307 div.2 C. GukiZ hates Boxes
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-03-10
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/Codeforces Round 313 div.2 D/">
-        <h1 class="post-title archive">
-            Codeforces Round 313 div.2 D. Equivalent Strings
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-03-10
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/Codeforces Round 313 div.2 E/">
-        <h1 class="post-title archive">
-            Codeforces Round 313 div.2 E. Gerald and Giant Chess
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-03-10
-    </p>
-</div>
-            
-            <div class="archive-before-pagination"></div>
-            <ul class="pager">
-    
-    
-        <li class="next"><a href="/archives/page/2/">Older Posts  &rarr;</a></li>
-    
-</ul>
         </div>
     </div>
-</div>
-
+</article>
 
     <!-- Footer -->
     <hr />

@@ -29,6 +29,8 @@
 
     <!--Description-->
     
+        <meta name="description" content="题目：http://codeforces.com/contest/579/problem/F官方的题解是一个dp套dp，但是讨论版里有更好的。">
+    
 
     <!--Author-->
     
@@ -37,7 +39,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="Yanghong&#39;s Blog"/>
+        <meta property="og:title" content="Codeforces Round 320 div.2 F. LCS Again"/>
     
 
     <!--Open Graph Description-->
@@ -48,7 +50,7 @@
 
     <!--Type page-->
     
-        <meta property="og:type" content="website" />
+        <meta property="og:type" content="article" />
     
 
     <!--Page Cover-->
@@ -59,7 +61,7 @@
 
     <!-- Title -->
     
-    <title>Archives - Yanghong&#39;s Blog</title>
+    <title>Codeforces Round 320 div.2 F. LCS Again - Yanghong&#39;s Blog</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
@@ -155,168 +157,81 @@
 </nav>
 
     <!-- Main Content -->
-    
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
 
-<!-- Page Header -->
-<!-- Set your background image for this header in the theme's configuration: index_cover -->
-<header class="intro-header" style="background-image: url('/images/base/home.jpg')">
+<header class="intro-header" style="background-image: url('/images/cover/2.jpg')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1>Archives</h1>
+                <div class="post-heading">
+                    <h1>Codeforces Round 320 div.2 F. LCS Again</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2017-03-10
+                        
+                    </span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/Codeforces/">#Codeforces</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                </div>
             
-                <div class="post-preview">
-    <a href="/20170605训练赛/">
-        <h1 class="post-title archive">
-            20170605训练赛
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-06-06
-    </p>
-</div>
+
+            <!-- Gallery -->
             
-                <div class="post-preview">
-    <a href="/20170524练习赛/">
-        <h1 class="post-title archive">
-            20170524练习赛
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-05-24
-    </p>
-</div>
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h3 id="题目：http-codeforces-com-contest-579-problem-F"><a href="#题目：http-codeforces-com-contest-579-problem-F" class="headerlink" title="题目：http://codeforces.com/contest/579/problem/F"></a>题目：<a href="http://codeforces.com/contest/579/problem/F" target="_blank" rel="external">http://codeforces.com/contest/579/problem/F</a></h3><p>官方的题解是一个dp套dp，但是讨论版里有更好的。</p>
+<a id="more"></a>
+<h3 id="题解："><a href="#题解：" class="headerlink" title="题解："></a>题解：</h3><p>I think there’s a simpler solution to 1D without DP (the hard part is verifying that it’s valid, I suppose, but this follows from a small bit of case analysis).</p>
+<p>We want the number of strings other than S which can result from removing one character and adding one. First, we block the string S into groups of consecutive equal characters. Removing a character from any part of one group is equivalent, so if there are k groups, we consider each of these k possibilities. Suppose we’ve taken from a group with size g and character c; you can add back any color in any place, except you can’t add back c adjacent to any of the g - 1 remaining c’s in the group (or you would get S back). Also, for each other group with size h and color d, we overcount the number of ways to add another d into this group by h, so the total number of valid distinct ways to add a character to S with one of the k groups diminished is nm - n (since n is the sum of the sizes of all of the groups).</p>
+<p>So our total answer would be k(mn - n), except a few of the strings T are double counted. It turns out that the only way to double count T is if there is some substring ab…aba in S (alternating different letters of some length  ≥ 2) which becomes replaced by ba…bab (see if you can see the two ways to make this transformation). Thus the final answer is<br>$$k(mn-n)-Number of alternating substrings of length at least 2$$<br>which runs in O(n) pretty easily.</p>
+<h3 id="翻译："><a href="#翻译：" class="headerlink" title="翻译："></a>翻译：</h3><p>对于一块相同的长度为g字符区域，可拿出一个字符c，然后以任意颜色塞回到任意位置，这样的LCS一定是$n-1$，有$n \cdot m$种情况。当然你不能把一个c以c塞回到g中，这样你就又得到了原来的字符串，这样的不合法情况有g（$g-1+1$）种。对于其他相同的长度为h的颜色为d字符区域，把c以d插入其中，有h+1个位置，但都是同一个串，所以重复了h次。那么总计不和法情况就有n种。那么这样的情况就有$n\cdot m-n$种。如果有k块颜色块，那么答案就是$k \cdot (nm-n)$种。</p>
+<p>剩下还有一种重复情况。对于一个“ab…aba”,你可以很容易发现有两种方法让它变为“ba…bab”（把首个a变成b加到最后和把最后的b变成a加到开头），那么有1种重复。<br>像这种长度大于2的两个字母重复串，都有一次重复。</p>
+<p>所以最终答案为:<br>$$k(mn-n)-Number of alternating substrings of length at least 2$$</p>
+<p>which runs in O(n) pretty easily.（鄙视一波官方题解）</p>
+
+
+                
+            </div>
+
+            <!-- Comments -->
             
-                <div class="post-preview">
-    <a href="/20170521练习赛/">
-        <h1 class="post-title archive">
-            20170521练习赛
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-05-21
-    </p>
-</div>
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
             
-                <div class="post-preview">
-    <a href="/20170517练习赛/">
-        <h1 class="post-title archive">
-            20170517练习赛
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-05-17
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/20170514练习赛/">
-        <h1 class="post-title archive">
-            20170514练习赛 (COCIcontest5)
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-05-14
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2017-3-11离线赛总结/">
-        <h1 class="post-title archive">
-            2017-3-11离线赛总结
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-03-11
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/Codeforces Round 307 div.2 D/">
-        <h1 class="post-title archive">
-            Codeforces Round 307 div.2 D. GukiZ and Binary Operations
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-03-10
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/Codeforces Round 307 div.2 C/">
-        <h1 class="post-title archive">
-            Codeforces Round 307 div.2 C. GukiZ hates Boxes
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-03-10
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/Codeforces Round 313 div.2 D/">
-        <h1 class="post-title archive">
-            Codeforces Round 313 div.2 D. Equivalent Strings
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-03-10
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/Codeforces Round 313 div.2 E/">
-        <h1 class="post-title archive">
-            Codeforces Round 313 div.2 E. Gerald and Giant Chess
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-03-10
-    </p>
-</div>
-            
-            <div class="archive-before-pagination"></div>
-            <ul class="pager">
-    
-    
-        <li class="next"><a href="/archives/page/2/">Older Posts  &rarr;</a></li>
-    
-</ul>
         </div>
     </div>
-</div>
-
+</article>
 
     <!-- Footer -->
     <hr />

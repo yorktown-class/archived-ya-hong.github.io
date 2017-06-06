@@ -29,6 +29,8 @@
 
     <!--Description-->
     
+        <meta name="description" content="题目：http://codeforces.com/contest/586/problem/E题解：先模拟转移的规律。然后发现它跟 Stern–Brocot tree 有点关系（ 当然你要先知道有 Stern–Brocot tree …… ）">
+    
 
     <!--Author-->
     
@@ -37,7 +39,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="Yanghong&#39;s Blog"/>
+        <meta property="og:title" content="Codeforces Round 325 div.2 E. Alice, Bob, Oranges and Apples"/>
     
 
     <!--Open Graph Description-->
@@ -48,7 +50,7 @@
 
     <!--Type page-->
     
-        <meta property="og:type" content="website" />
+        <meta property="og:type" content="article" />
     
 
     <!--Page Cover-->
@@ -59,7 +61,7 @@
 
     <!-- Title -->
     
-    <title>Archives - Yanghong&#39;s Blog</title>
+    <title>Codeforces Round 325 div.2 E. Alice, Bob, Oranges and Apples - Yanghong&#39;s Blog</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
@@ -155,168 +157,91 @@
 </nav>
 
     <!-- Main Content -->
-    
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
 
-<!-- Page Header -->
-<!-- Set your background image for this header in the theme's configuration: index_cover -->
-<header class="intro-header" style="background-image: url('/images/base/home.jpg')">
+<header class="intro-header" style="background-image: url('/images/cover/0.jpg')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1>Archives</h1>
+                <div class="post-heading">
+                    <h1>Codeforces Round 325 div.2 E. Alice, Bob, Oranges and Apples</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2017-03-10
+                        
+                    </span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/Codeforces/">#Codeforces</a> <a href="/tags/数学/">#数学</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                </div>
             
-                <div class="post-preview">
-    <a href="/20170605训练赛/">
-        <h1 class="post-title archive">
-            20170605训练赛
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-06-06
-    </p>
-</div>
+
+            <!-- Gallery -->
             
-                <div class="post-preview">
-    <a href="/20170524练习赛/">
-        <h1 class="post-title archive">
-            20170524练习赛
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-05-24
-    </p>
-</div>
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h3 id="题目：http-codeforces-com-contest-586-problem-E"><a href="#题目：http-codeforces-com-contest-586-problem-E" class="headerlink" title="题目：http://codeforces.com/contest/586/problem/E"></a>题目：<a href="http://codeforces.com/contest/586/problem/E" target="_blank" rel="external">http://codeforces.com/contest/586/problem/E</a></h3><h3 id="题解："><a href="#题解：" class="headerlink" title="题解："></a>题解：</h3><p>先模拟转移的规律。然后发现它跟 Stern–Brocot tree 有点关系（ 当然你要先知道有 Stern–Brocot tree …… ）<br><img src="\images\Codeforces Round 325 div.2 E Ep1.png" alt=""></p>
+<a id="more"></a>
+<p>一开始，Alice就是$\frac10$，Bob就是$\frac01$。转移的过程就是找到答案的过程（$\frac xy$)。</p>
+<p>例如对于<code>1 4</code>，那么就是找到$\frac14$。</p>
+<ol>
+<li>Bob为$\frac01$，Alice为$\frac10$，在根节点上搜索。</li>
+<li>向左移动，Bob为$\frac01$，Alice为$\frac11$，位于$\frac12$</li>
+<li>向左移动，Bob为$\frac01$，Alice为$\frac12$，位于$\frac13$</li>
+<li>向左移动，找到$\frac14$</li>
+</ol>
+<p>向左就是Bob向Alice转移，向右就是Alice向Bob转移。</p>
+<p>那么如何找到答案。</p>
+<p>首先答案肯定是个最简分数，否则不会出现在树上。<br><br>然后：</p>
+<ol>
+<li>对于根节点如果分子比分母大，那么就在左区间，否则在右区间。</li>
+<li>如果$x&gt;y$，那么走完一步就等同于在根节点找$x-y$</li>
+<li>如果$x&lt;y$，那么走完一步就等同于在根节点找$y-x$</li>
+</ol>
+<p>而整个步骤就像是gcd的过程。它也可以用类似的方法求解。<br>复杂度$O(\log n)$</p>
+<h3 id="代码：http-codeforces-com-contest-586-submission-24737673"><a href="#代码：http-codeforces-com-contest-586-submission-24737673" class="headerlink" title="代码：http://codeforces.com/contest/586/submission/24737673"></a>代码：<a href="http://codeforces.com/contest/586/submission/24737673" target="_blank" rel="external">http://codeforces.com/contest/586/submission/24737673</a></h3>
+
+                
+            </div>
+
+            <!-- Comments -->
             
-                <div class="post-preview">
-    <a href="/20170521练习赛/">
-        <h1 class="post-title archive">
-            20170521练习赛
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-05-21
-    </p>
-</div>
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
             
-                <div class="post-preview">
-    <a href="/20170517练习赛/">
-        <h1 class="post-title archive">
-            20170517练习赛
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-05-17
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/20170514练习赛/">
-        <h1 class="post-title archive">
-            20170514练习赛 (COCIcontest5)
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-05-14
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2017-3-11离线赛总结/">
-        <h1 class="post-title archive">
-            2017-3-11离线赛总结
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-03-11
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/Codeforces Round 307 div.2 D/">
-        <h1 class="post-title archive">
-            Codeforces Round 307 div.2 D. GukiZ and Binary Operations
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-03-10
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/Codeforces Round 307 div.2 C/">
-        <h1 class="post-title archive">
-            Codeforces Round 307 div.2 C. GukiZ hates Boxes
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-03-10
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/Codeforces Round 313 div.2 D/">
-        <h1 class="post-title archive">
-            Codeforces Round 313 div.2 D. Equivalent Strings
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-03-10
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/Codeforces Round 313 div.2 E/">
-        <h1 class="post-title archive">
-            Codeforces Round 313 div.2 E. Gerald and Giant Chess
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-03-10
-    </p>
-</div>
-            
-            <div class="archive-before-pagination"></div>
-            <ul class="pager">
-    
-    
-        <li class="next"><a href="/archives/page/2/">Older Posts  &rarr;</a></li>
-    
-</ul>
         </div>
     </div>
-</div>
-
+</article>
 
     <!-- Footer -->
     <hr />

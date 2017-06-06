@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+	<!-- hexo-inject:begin --><!-- hexo-inject:end --><!--Mathjax-->
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+            processEscapes: true,
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+    }); 
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';                 
+        }       
+    });
+    </script>
+    <script type="text/javascript" async
+        src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="Task 1这个鬼题目虽然很快就做出来了，但是我都不知道自己怎么想出来的。
+由于删除的数的个数是确定的，所以得到的数的长度也是确定的，那么肯定是要字典序最大了。可以用栈维护。
+12345678910cin&amp;gt;&amp;gt;n&amp;gt;&amp;gt;m;scanf(&quot;%s&quot;,num+1);int tot=0;f">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="Yanghong">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="20170605训练赛"/>
+    
+
+    <!--Open Graph Description-->
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="Yanghong&#39;s Blog"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+        <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>20170605训练赛 - Yanghong&#39;s Blog</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Google Analytics -->
+    
+
+
+    <!-- favicon -->
+    
+    <link rel="icon" href="images/base/favicon.ico"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+    
+	
+</head>
+
+
+<body>
+
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Home</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/tags">
+                            
+                                Tags
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://github.com/klugjo/hexo-theme-clean-blog">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('/images/20170605训练赛FuckHash.png')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>20170605训练赛</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2017-06-06
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/总结/">#总结</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                </div>
+            
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h1 id="Task-1"><a href="#Task-1" class="headerlink" title="Task 1"></a>Task 1</h1><p>这个鬼题目虽然很快就做出来了，但是我都不知道自己怎么想出来的。</p>
+<p>由于删除的数的个数是确定的，所以得到的数的长度也是确定的，那么肯定是要字典序最大了。可以用栈维护。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cin</span>&gt;&gt;n&gt;&gt;m;</div><div class="line"><span class="built_in">scanf</span>(<span class="string">"%s"</span>,num+<span class="number">1</span>);</div><div class="line"></div><div class="line"><span class="keyword">int</span> tot=<span class="number">0</span>;</div><div class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;++i) &#123;</div><div class="line">	<span class="keyword">while</span> (tp&amp;&amp;tot&lt;m&amp;&amp;stk[tp<span class="number">-1</span>]&lt;num[i]) tp--,tot++;</div><div class="line">	stk[tp++]=num[i];</div><div class="line">&#125;</div><div class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;tp;++i) <span class="built_in">printf</span>(<span class="string">"%c"</span>,stk[i]);</div><div class="line"><span class="built_in">puts</span>(<span class="string">""</span>);</div></pre></td></tr></table></figure>
+<h1 id="Task-2"><a href="#Task-2" class="headerlink" title="Task 2"></a>Task 2</h1><p>这题套路也跟上一题差不多。</p>
+<p>在草稿纸上大概画了一下，结果发现了奇怪的事情：</p>
+<p><img src="\images\20170605训练赛pic1.png" alt=""></p>
+<p>假如栅栏大概长成这样，可以发现最后答案肯定是<br>$$<br>x1-x2+x3-x2+x3-x4+x5-x4<br>$$<br>也就是说，答案只跟转折的几个点的值有关（在一般情况下也是这样）</p>
+<p>然后可以把之前的答案形式转换一下：<br>$$<br>(x1+x3 \times 2+x5) - (x2 \times 2 + x4 \times 2)<br>$$<br>在端点的点贡献一次，其他的点贡献两次，而且贡献是独立的。</p>
+<p>那么先分别找出由下到上的点和由上到下的点的个数，再排序一下就可以了。</p>
+<h1 id="Task-3"><a href="#Task-3" class="headerlink" title="Task 3"></a>Task 3</h1><p>第三题要分块决策，但是这种题目我向来是边都摸不到，而且考试的时候也还不知道这题要分块决策。那要怎么办呢，唯有水分。。。。</p>
+<p>正解分了两个部分（可惜我一个部分也没有想到）。</p>
+<p>所有满足的$x$都可以表示为$p \cdot n$ ，的形式，主要就是从$n$下手，找到第k大的合法的n。</p>
+<p>由于x的最小素因数是p，那么n的最小素因数不能小于p，然后分两种情况讨论：</p>
+<ol>
+<li><p>p很大。</p>
+<p>而么n的范围是$[1,\frac{\max}{p}],(\max = 1e9)$,那么n的范围就会变得很小。那么可以用类似筛素数的方法的到最小素因数不小于p的第k大的n</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> lim=MX/p,tot=<span class="number">1</span>;</div><div class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;=lim;++i) &#123;</div><div class="line">	<span class="keyword">if</span> (!np[i]) &#123;</div><div class="line">		<span class="keyword">if</span> (i&lt;p&amp;&amp;<span class="number">1L</span>L*i*i&lt;=lim) &#123;</div><div class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> j=i*i;j&lt;=lim;j+=i) np[j]=<span class="literal">true</span>;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">if</span> (i&gt;=p) tot++;</div><div class="line">		<span class="keyword">if</span> (tot==k) &#123;</div><div class="line">			<span class="built_in">printf</span>(<span class="string">"%d\n"</span>,p*i);</div><div class="line">			<span class="keyword">return</span>;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>p很小。</p>
+<p>这样n的范围就会变得很大。不过小于p的素数个数就会很少。那么可以二分n，然后用容斥原理算出n是第几大。</p>
+</li>
+</ol>
+<p>根据复杂度算一下p算大还是小的分界大概是50</p>
+<h1 id="Task-4"><a href="#Task-4" class="headerlink" title="Task 4"></a>Task 4</h1><p>这道题和昨天晚上讲的一道题一毛一样，而且也很容易看出来。其实就是裸题。</p>
+<p>然后我想到两个字符串判相等复杂度是 $O(n)$ 的，这不是很爆炸，然后我就哈希了一下。。。</p>
+<p>结果我的哈希方法被用心险恶的出题人猜到了（其实就是$ \times 233+c \mod 1e9+7$ ），然后就炸上天了。</p>
+<p><img src="\images\20170605训练赛FuckHash.png" alt=""></p>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/klugjo/hexo-theme-clean-blog" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">&copy; 2017 Yanghong<br></p>
+                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
+                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments --><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+</body>
+
+</html>

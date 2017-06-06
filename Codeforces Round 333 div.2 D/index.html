@@ -29,6 +29,10 @@
 
     <!--Description-->
     
+        <meta name="description" content="题目：http://codeforces.com/contest/602/problem/D题意：给出n个数，和m个询问。每个询问包含两个数L和R。
+定义区间的最大斜率为 $\max\lceil\frac{|h[i]-h[j]|} {j-i}\rceil     (L&amp;lt;=i&amp;lt;j&amp;lt;=R)$ 。
+对每个询问输出所有子区间的区间的最大斜率和。">
+    
 
     <!--Author-->
     
@@ -37,7 +41,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="Yanghong&#39;s Blog"/>
+        <meta property="og:title" content="Codeforces Round 333 div.2 D. Lipshitz Sequence"/>
     
 
     <!--Open Graph Description-->
@@ -48,7 +52,7 @@
 
     <!--Type page-->
     
-        <meta property="og:type" content="website" />
+        <meta property="og:type" content="article" />
     
 
     <!--Page Cover-->
@@ -59,7 +63,7 @@
 
     <!-- Title -->
     
-    <title>Archives - Yanghong&#39;s Blog</title>
+    <title>Codeforces Round 333 div.2 D. Lipshitz Sequence - Yanghong&#39;s Blog</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
@@ -155,168 +159,85 @@
 </nav>
 
     <!-- Main Content -->
-    
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
 
-<!-- Page Header -->
-<!-- Set your background image for this header in the theme's configuration: index_cover -->
-<header class="intro-header" style="background-image: url('/images/base/home.jpg')">
+<header class="intro-header" style="background-image: url('/images/cover/1.jpg')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1>Archives</h1>
+                <div class="post-heading">
+                    <h1>Codeforces Round 333 div.2 D. Lipshitz Sequence</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2017-03-10
+                        
+                    </span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/Codeforces/">#Codeforces</a> <a href="/tags/贪心/">#贪心</a> <a href="/tags/单调性/">#单调性</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                </div>
             
-                <div class="post-preview">
-    <a href="/20170605训练赛/">
-        <h1 class="post-title archive">
-            20170605训练赛
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-06-06
-    </p>
-</div>
+
+            <!-- Gallery -->
             
-                <div class="post-preview">
-    <a href="/20170524练习赛/">
-        <h1 class="post-title archive">
-            20170524练习赛
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-05-24
-    </p>
-</div>
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h3 id="题目：http-codeforces-com-contest-602-problem-D"><a href="#题目：http-codeforces-com-contest-602-problem-D" class="headerlink" title="题目：http://codeforces.com/contest/602/problem/D"></a>题目：<a href="http://codeforces.com/contest/602/problem/D" target="_blank" rel="external">http://codeforces.com/contest/602/problem/D</a></h3><h3 id="题意："><a href="#题意：" class="headerlink" title="题意："></a>题意：</h3><p>给出n个数，和m个询问。每个询问包含两个数L和R。</p>
+<p>定义区间的最大斜率为 $\max\lceil\frac{|h[i]-h[j]|} {j-i}\rceil     (L&lt;=i&lt;j&lt;=R)$ 。</p>
+<p>对每个询问输出所有子区间的区间的最大斜率和。</p>
+<a id="more"></a>
+<h3 id="题解："><a href="#题解：" class="headerlink" title="题解："></a>题解：</h3><p>斜率的最大值一定是在相邻的两点处取得。设一个区间的最大斜率为 $\lceil \frac {val} {len} \rceil$ （$len \ge 2$) ，它可以分成$len$个两点组合。</p>
+<p>$$val= \lfloor \frac{val}{len}  \rfloor  *len + (val \mod len)$$</p>
+<p>把$val$平均分配到每一位中，其间两点组合的斜率的最大值最小，每位都至少是 $\lfloor \frac{val}{len}  \rfloor$，</p>
+<p>若 $\lfloor \frac{val} {len} \rfloor &lt; \lceil \frac{val} {len}  \rceil$ ，$val \mod len$ 大于0，那么其间两点组合的斜率最大值不会比它小。</p>
+<p>否则  $\lfloor \frac{val} {len}  \rfloor = \lceil \frac{val} {len}  \rceil$</p>
+<p>所以使其间两点组合最大值最小，值也不小于原本的斜率，所以斜率最大值一定在相邻两点处取得。</p>
+<p>那么就简单很多了，对于每个斜率值先求出它在哪个区间是最大的，然后再在回答询问时直接计算贡献（值 乘上 出现次数）。</p>
+<p>求区间可以用单调栈，分别求得左边和右边延伸的最远处。</p>
+<p>（有很多细节，A不掉看代码就知道了）</p>
+<h3 id="代码：http-codeforces-com-contest-602-submission-24819908"><a href="#代码：http-codeforces-com-contest-602-submission-24819908" class="headerlink" title="代码：http://codeforces.com/contest/602/submission/24819908"></a>代码：<a href="http://codeforces.com/contest/602/submission/24819908" target="_blank" rel="external">http://codeforces.com/contest/602/submission/24819908</a></h3>
+
+                
+            </div>
+
+            <!-- Comments -->
             
-                <div class="post-preview">
-    <a href="/20170521练习赛/">
-        <h1 class="post-title archive">
-            20170521练习赛
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-05-21
-    </p>
-</div>
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
             
-                <div class="post-preview">
-    <a href="/20170517练习赛/">
-        <h1 class="post-title archive">
-            20170517练习赛
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-05-17
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/20170514练习赛/">
-        <h1 class="post-title archive">
-            20170514练习赛 (COCIcontest5)
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-05-14
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2017-3-11离线赛总结/">
-        <h1 class="post-title archive">
-            2017-3-11离线赛总结
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-03-11
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/Codeforces Round 307 div.2 D/">
-        <h1 class="post-title archive">
-            Codeforces Round 307 div.2 D. GukiZ and Binary Operations
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-03-10
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/Codeforces Round 307 div.2 C/">
-        <h1 class="post-title archive">
-            Codeforces Round 307 div.2 C. GukiZ hates Boxes
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-03-10
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/Codeforces Round 313 div.2 D/">
-        <h1 class="post-title archive">
-            Codeforces Round 313 div.2 D. Equivalent Strings
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-03-10
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/Codeforces Round 313 div.2 E/">
-        <h1 class="post-title archive">
-            Codeforces Round 313 div.2 E. Gerald and Giant Chess
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-03-10
-    </p>
-</div>
-            
-            <div class="archive-before-pagination"></div>
-            <ul class="pager">
-    
-    
-        <li class="next"><a href="/archives/page/2/">Older Posts  &rarr;</a></li>
-    
-</ul>
         </div>
     </div>
-</div>
-
+</article>
 
     <!-- Footer -->
     <hr />
