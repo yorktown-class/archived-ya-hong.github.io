@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+	<!-- hexo-inject:begin --><!-- hexo-inject:end --><!--Mathjax-->
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+            processEscapes: true,
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+    }); 
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';                 
+        }       
+    });
+    </script>
+    <script type="text/javascript" async
+        src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="Task1Task 2这个鬼题纠结了好久。
+一开始是想用线段树做的，但是后来发现有些东西我写不出来，而且又很恶心，然后就放弃了。
+然后然后想到两个平台一样高的时候，两个平台就是一样的。那么就可以把一个删掉，把它的信息加入到另一个里面（表示两个平台合并了）。然后想到的是并查集。
+开始写的之后候用链表写">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="Yanghong">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="20170612组队赛"/>
+    
+
+    <!--Open Graph Description-->
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="Yanghong&#39;s Blog"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+        <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>20170612组队赛 - Yanghong&#39;s Blog</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Google Analytics -->
+    
+
+
+    <!-- favicon -->
+    
+    <link rel="icon" href="images/base/favicon.ico"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+    
+	
+</head>
+
+
+<body>
+
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Home</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/tags">
+                            
+                                Tags
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/adarkroom">
+                            
+                                A Dark Room
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://github.com/klugjo/hexo-theme-clean-blog">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('/images/cover/8.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>20170612组队赛</h1>
+                    
+                    <h2 class="post-subheading">
+                        USACO DEC 2005 - USACO JAN 2008 - COCI2012/2013 Contest#2
+                    </h2>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2017-06-18
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/总结/">#总结</a> <a href="/tags/链表/">#链表</a> <a href="/tags/二分图最大匹配/">#二分图最大匹配</a> <a href="/tags/斜率优化/">#斜率优化</a> <a href="/tags/分块/">#分块</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                </div>
+            
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h1 id="Task1"><a href="#Task1" class="headerlink" title="Task1"></a>Task1</h1><h1 id="Task-2"><a href="#Task-2" class="headerlink" title="Task 2"></a>Task 2</h1><p>这个鬼题纠结了好久。</p>
+<p>一开始是想用线段树做的，但是后来发现有些东西我写不出来，而且又很恶心，然后就放弃了。</p>
+<p>然后然后想到两个平台一样高的时候，两个平台就是一样的。那么就可以把一个删掉，把它的信息加入到另一个里面（表示两个平台合并了）。然后想到的是并查集。</p>
+<p>开始写的之后候用链表写好像方便一点，然后就改掉了。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"> </div><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> M=<span class="number">1e5</span>+<span class="number">5</span>;</div><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> INF=<span class="number">1</span>&lt;&lt;<span class="number">28</span>;</div><div class="line"> </div><div class="line"><span class="keyword">int</span> n;</div><div class="line"><span class="keyword">int</span> W[M],H[M];</div><div class="line"> </div><div class="line"><span class="keyword">int</span> L[M],R[M],t[M];</div><div class="line"><span class="keyword">int</span> lft[M],rit[M];</div><div class="line"><span class="keyword">long</span> <span class="keyword">long</span> res[M];</div><div class="line"> </div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</div><div class="line">    <span class="built_in">cin</span>&gt;&gt;n;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;++i) <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;W[i],&amp;H[i]);</div><div class="line">    H[<span class="number">0</span>]=H[n+<span class="number">1</span>]=INF;</div><div class="line">     </div><div class="line">    <span class="keyword">int</span> p=<span class="number">0</span>;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;++i) &#123;</div><div class="line">        res[i]=INF;</div><div class="line">        L[i]=R[i]=t[i]=i;</div><div class="line">        lft[i]=rit[i]=i;</div><div class="line">        <span class="keyword">if</span> (H[i]&lt;H[p]) p=i;</div><div class="line">    &#125;</div><div class="line"> </div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;++i) &#123;</div><div class="line">        <span class="keyword">if</span> (H[i]&gt;H[i<span class="number">-1</span>]) lft[i]=lft[i<span class="number">-1</span>];</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=n;i&gt;=<span class="number">1</span>;--i) &#123;</div><div class="line">        <span class="keyword">if</span> (H[i]&gt;H[i+<span class="number">1</span>]) rit[i]=rit[i+<span class="number">1</span>];</div><div class="line">    &#125;</div><div class="line"> </div><div class="line">    <span class="keyword">long</span> <span class="keyword">long</span> last=<span class="number">0</span>;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> T=<span class="number">1</span>;T&lt;=n;++T) &#123;</div><div class="line">        p=t[p];</div><div class="line">        res[p]=last+W[p];</div><div class="line">        <span class="keyword">if</span> (T==n) <span class="keyword">break</span>;</div><div class="line">        <span class="keyword">int</span> l=t[L[p]<span class="number">-1</span>],r=t[R[p]+<span class="number">1</span>];</div><div class="line">        <span class="keyword">if</span> (H[l]&lt;H[r]) &#123;</div><div class="line">            last+=<span class="number">1L</span>L*W[p]*(H[l]-H[p]);</div><div class="line">            R[l]=R[p];</div><div class="line">            t[p]=l;</div><div class="line">            W[l]+=W[p];</div><div class="line">             </div><div class="line">            rit[l]=l;</div><div class="line">             </div><div class="line">            p=lft[l];</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">else</span> &#123;</div><div class="line">            last+=<span class="number">1L</span>L*W[p]*(H[r]-H[p]);</div><div class="line">            L[r]=L[p];</div><div class="line">            t[p]=r;</div><div class="line">            W[r]+=W[p];</div><div class="line">             </div><div class="line">            lft[r]=r;</div><div class="line">             </div><div class="line">            p=rit[r];</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;++i) <span class="built_in">printf</span>(<span class="string">"%lld\n"</span>,res[i]);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>其实就是不断把已经被水淹没的平台加入相同高度的没有被淹没的点，然后一起升高。</p>
+<hr>
+<ul>
+<li>链表</li>
+</ul>
+<h1 id="Task-3"><a href="#Task-3" class="headerlink" title="Task 3"></a>Task 3</h1><p>这题一开始就想错了方向，导致一直想不出来。</p>
+<p>每个信息都可以转化为区间范围内的所以数的取值范围。然后不同区间如果有交集的是可以分开的。那么可以的到很多独立的区间，然后可以直接计算答案了。</p>
+<p>结果发现好像不能得到这些独立的区间，然后就炸了。</p>
+<p>最后五分钟的时候gay豪想出了正解，然后开始狂敲，结果写错了两个地方。。。</p>
+<hr>
+<p>其实这题还是很简单的，可以先确定每个数可选的值：</p>
+<ol>
+<li>没有被其他区间设为最大值或最小值的数。</li>
+<li>没有超过本区间最大值或最小值的数。</li>
+</ol>
+<p>然后就二分图匹配就好了。</p>
+<hr>
+<ul>
+<li>二分图最大匹配</li>
+</ul>
+<h1 id="Task-4"><a href="#Task-4" class="headerlink" title="Task 4"></a>Task 4</h1><p>这题比赛的时候想都没想（<del>就算想了也没什么用</del>）。</p>
+<p>这题又是要分离一下变量：<br>$$<br>\begin{align}<br>V_k\\<br>&amp;=(T_{now}-T_k) \cdot Z_k + S_z \\<br>&amp;=T_{now} \cdot Z_k - T_k \cdot Z_k + S_z \ <br>\end{align}<br>$$<br>令$b=V_k,k=T_{now},x=Z_k,y=-T_k \cdot Z_k+S_Z$<br>$$<br>b=k \cdot x +y\\<br>y = - k \cdot x +b<br>$$<br>然后就发现每个摊位都是一条直线。但是会修改摊位的信息，所以不能直接做。</p>
+<p>应该是只能分块了。</p>
+<p>先考虑询问整个块。由于询问的时间是单调递增的，所以可以直接在凸包上通过直接删除节点来保证每一块的总复杂度为 $O(S)$。但是摊位的信息会被修改，那么就不得不重构凸包，删除的点也会重新加入，复杂度就会变得很玄学。</p>
+<p>如果不仔细想可能就会觉得直接在凸包上删点是不可行的而转去写二分的写法（二分的复杂度还是太高了）。其实它是可以的。一个凸包的总复杂度为$O(size)$ ，而修改由于使删除的点重新加入了，会使它的复杂度加$O(size)$ 。那么所有有块的整体询问的复杂度就是：<br>$$<br>size*cnt+\frac{querylength}{size}<br>$$<br>$cnt$ 为修改次数，最大为$n$。$querylength$为询问总长度，最大为$n^2$，$size$等于$\sqrt{n}$</p>
+<p>所以整块询问的复杂度为$O(n \sqrt n)$</p>
+<p>然后加上部分询问的复杂度，也是$n \sqrt n$</p>
+<p>所以，整体的复杂度也是$O(n\sqrt n)$</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"></div><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> M=<span class="number">1e5</span>;</div><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> S=<span class="number">320</span>;</div><div class="line"><span class="keyword">const</span> <span class="keyword">long</span> <span class="keyword">long</span> INF=<span class="number">1L</span>L&lt;&lt;<span class="number">60</span>;</div><div class="line"></div><div class="line"><span class="keyword">struct</span> point &#123;</div><div class="line">	<span class="keyword">long</span> <span class="keyword">long</span> x,y;</div><div class="line">	<span class="keyword">int</span> k;</div><div class="line">	point(<span class="keyword">int</span> T=<span class="number">-1</span>,<span class="keyword">int</span> K=<span class="number">-1</span>,<span class="keyword">int</span> Z=<span class="number">-1</span>,<span class="keyword">int</span> S=<span class="number">-1</span>) &#123;</div><div class="line">		<span class="keyword">if</span> (T==<span class="number">-1</span>) &#123;</div><div class="line">			y=-INF;</div><div class="line">			x=<span class="number">0</span>;</div><div class="line">			<span class="keyword">return</span>;</div><div class="line">		&#125;</div><div class="line">		x=Z;</div><div class="line">		y=S<span class="number">-1</span>LL*T*Z;</div><div class="line">		k=K;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">bool</span> <span class="keyword">operator</span> &lt; (<span class="keyword">const</span> point &amp;t) <span class="keyword">const</span> &#123;</div><div class="line">		<span class="keyword">if</span> (x!=t.x) <span class="keyword">return</span> x&lt;t.x;</div><div class="line">		<span class="keyword">return</span> y&lt;t.y;</div><div class="line">	&#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">struct</span> NODE &#123;</div><div class="line">	point p[S];</div><div class="line">	point store[S];</div><div class="line">	<span class="keyword">int</span> tot;</div><div class="line">	<span class="keyword">int</span> stk[S],tp,l;</div><div class="line">	</div><div class="line">	<span class="function"><span class="keyword">bool</span> <span class="title">cmp</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b,<span class="keyword">int</span> c)</span> </span>&#123;</div><div class="line">		<span class="keyword">return</span> <span class="number">1L</span>L*(p[b].y-p[a].y)*(p[c].x-p[b].x) &lt;= <span class="number">1L</span>L*(p[c].y-p[b].y)*(p[b].x-p[a].x) ;</div><div class="line">	&#125;</div><div class="line">	<span class="function"><span class="keyword">long</span> <span class="keyword">long</span> <span class="title">val</span><span class="params">(<span class="keyword">int</span> k,point a)</span> </span>&#123;</div><div class="line">		<span class="keyword">return</span> <span class="number">1L</span>L*k*a.x+a.y;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	<span class="function"><span class="keyword">void</span> <span class="title">Del</span><span class="params">(<span class="keyword">int</span> k)</span> </span>&#123;</div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;tot;++i) &#123;</div><div class="line">			<span class="keyword">if</span> (p[i].k==k) &#123;</div><div class="line">				<span class="keyword">for</span> (<span class="keyword">int</span> j=i+<span class="number">1</span>;j&lt;tot;++j) &#123;</div><div class="line">					p[j<span class="number">-1</span>]=p[j];</div><div class="line">				&#125;</div><div class="line">				tot--;</div><div class="line">				<span class="keyword">return</span>;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="function"><span class="keyword">void</span> <span class="title">Ins</span><span class="params">(point x)</span> </span>&#123;</div><div class="line">		Del(x.k);</div><div class="line">		store[x.k%S]=x;</div><div class="line">		</div><div class="line">		<span class="keyword">int</span> pos=tot;</div><div class="line">		<span class="keyword">while</span> (pos&amp;&amp;x&lt;p[pos<span class="number">-1</span>]) p[pos]=p[pos<span class="number">-1</span>],--pos;</div><div class="line">		p[pos]=x;</div><div class="line">		tot++;</div><div class="line">		</div><div class="line">		tp=<span class="number">0</span>;</div><div class="line">		stk[tp++]=<span class="number">0</span>,stk[tp++]=<span class="number">1</span>;</div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;tot;++i) &#123;</div><div class="line">			<span class="keyword">while</span> (tp&gt;=<span class="number">2</span>&amp;&amp;cmp(stk[tp<span class="number">-2</span>],stk[tp<span class="number">-1</span>],i)) tp--;</div><div class="line">			stk[tp++]=i;</div><div class="line">		&#125;</div><div class="line">		tp=min(tp,tot);</div><div class="line">		l=<span class="number">0</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="function"><span class="keyword">long</span> <span class="keyword">long</span> <span class="title">query_all</span><span class="params">(<span class="keyword">int</span> k)</span> </span>&#123;</div><div class="line">		<span class="keyword">if</span> (l==tp) <span class="keyword">return</span> -INF;</div><div class="line">		<span class="keyword">while</span> (l+<span class="number">1</span>&lt;tp&amp;&amp;val(k,p[stk[l+<span class="number">1</span>]])&gt;=val(k,p[stk[l]])) l++;</div><div class="line">		<span class="keyword">return</span> val(k,p[stk[l]]);</div><div class="line">	&#125;</div><div class="line">	<span class="function"><span class="keyword">long</span> <span class="keyword">long</span> <span class="title">query_part</span><span class="params">(<span class="keyword">int</span> k,<span class="keyword">int</span> L,<span class="keyword">int</span> R)</span> </span>&#123;</div><div class="line">		<span class="keyword">long</span> <span class="keyword">long</span> res=-INF;</div><div class="line">		L%=S,R%=S;</div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i=L;i&lt;=R;++i) &#123;</div><div class="line">			res=max(res,val(k,store[i]));</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">return</span> res;</div><div class="line">	&#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">NODE part[S];</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</div><div class="line">	<span class="keyword">int</span> n,m;</div><div class="line">	<span class="built_in">cin</span>&gt;&gt;n&gt;&gt;m;</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> T=<span class="number">1</span>;T&lt;=m;++T) &#123;</div><div class="line">		<span class="keyword">int</span> k;</div><div class="line">		<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;k);</div><div class="line">		<span class="keyword">if</span> (k==<span class="number">1</span>) &#123;</div><div class="line">			<span class="keyword">int</span> t,k,z,s;</div><div class="line">			<span class="built_in">scanf</span>(<span class="string">"%d%d%d%d"</span>,&amp;t,&amp;k,&amp;z,&amp;s);</div><div class="line">			<span class="function">point <span class="title">now</span><span class="params">(t,k,z,s)</span></span>;</div><div class="line">			<span class="keyword">int</span> ID=k/S;</div><div class="line">			part[ID].Ins(now);</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">else</span> &#123;</div><div class="line">			<span class="keyword">int</span> t,l,r;</div><div class="line">			<span class="keyword">long</span> <span class="keyword">long</span> res=-INF;</div><div class="line">			<span class="built_in">scanf</span>(<span class="string">"%d%d%d"</span>,&amp;t,&amp;l,&amp;r);</div><div class="line">			<span class="keyword">if</span> (l&gt;r) swap(l,r);</div><div class="line">			<span class="keyword">int</span> lid=l/S,rid=r/S;</div><div class="line">			<span class="keyword">if</span> (lid==rid) res=part[lid].query_part(t,l,r);</div><div class="line">			<span class="keyword">else</span> res=max(part[lid].query_part(t,l,S<span class="number">-1</span>),part[rid].query_part(t,<span class="number">0</span>,r));</div><div class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> i=lid+<span class="number">1</span>;i&lt;rid;++i) &#123;</div><div class="line">				res=max(res,part[i].query_all(t));</div><div class="line">			&#125;</div><div class="line">			<span class="keyword">if</span> (res==-INF) <span class="built_in">printf</span>(<span class="string">"nema\n"</span>);</div><div class="line">			<span class="keyword">else</span> <span class="built_in">printf</span>(<span class="string">"%lld\n"</span>,res);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<hr>
+<ul>
+<li>斜率优化</li>
+<li>分块</li>
+</ul>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/klugjo/hexo-theme-clean-blog" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">&copy; 2017 Yanghong<br></p>
+                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
+                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments --><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+</body>
+
+</html>
