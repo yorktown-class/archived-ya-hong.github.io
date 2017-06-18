@@ -237,7 +237,38 @@ var Outside = {
 			// random can be 0 but not 1; however, 0 as a target is useless
 			var target = Math.floor(Math.random() * huts) + 1;
 			var inhabitants = 0;
-			if(target <= 0="" 60="" full){="" inhabitants="Outside._HUT_ROOM;" }="" else="" if(target="=" full="" +="" 1){="" %="" outside._hut_room;="" $sm.set('game.buildings["hut"]',="" ($sm.get('game.buildings["hut"]')="" -="" 1));="" if(inhabitants){="" outside.killvillagers(inhabitants);="" dead="" this="" method="" returns="" the="" total="" number="" of="" victims,="" for="" further="" actions="" return="" dead;="" },="" schedulepopincrease:="" function()="" {="" var="" nextincrease="Math.floor(Math.random()*(Outside._POP_DELAY[1]" outside._pop_delay[0]))="" outside._pop_delay[0];="" engine.log('next="" population="" increase="" scheduled="" in="" '="" minutes');="" outside._poptimeout="Engine.setTimeout(Outside.increasePopulation," *="" 1000);="" updateworkersview:="" workers="$('div#workers');" if="" our="" is="" and="" we="" don't="" already="" have="" a="" view,="" there's="" nothing="" to="" do="" here.="" if(!workers.length="" &&="" $sm.get('game.population')="==" 0)="" return;="" needsappend="false;" if(workers.length="==">').attr('id', 'workers').css('opacity', 0);
+			if(target <= full){
+				inhabitants = Outside._HUT_ROOM;
+			} else if(target == full + 1){
+				inhabitants = population % Outside._HUT_ROOM;
+			}
+			$SM.set('game.buildings["hut"]', ($SM.get('game.buildings["hut"]') - 1));
+			if(inhabitants){
+				Outside.killVillagers(inhabitants);
+				dead += inhabitants;
+			}
+		}
+		// this method returns the total number of victims, for further actions
+		return dead;
+	},
+	
+	schedulePopIncrease: function() {
+		var nextIncrease = Math.floor(Math.random()*(Outside._POP_DELAY[1] - Outside._POP_DELAY[0])) + Outside._POP_DELAY[0];
+		Engine.log('next population increase scheduled in ' + nextIncrease + ' minutes');
+		Outside._popTimeout = Engine.setTimeout(Outside.increasePopulation, nextIncrease * 60 * 1000);
+	},
+	
+	updateWorkersView: function() {
+		var workers = $('div#workers');
+
+		// If our population is 0 and we don't already have a workers view,
+		// there's nothing to do here.
+		if(!workers.length && $SM.get('game.population') === 0) return;
+
+		var needsAppend = false;
+		if(workers.length === 0) {
+			needsAppend = true;
+			workers = $('<div>').attr('id', 'workers').css('opacity', 0);
 		}
 		
 		var numGatherers = $SM.get('game.population');
@@ -531,7 +562,37 @@ var Outside = {
 			title = _("A Silent Forest");
 		} else if(numHuts == 1) {
 			title = _("A Lonely Hut");
-		} else if(numHuts <= 4)="" {="" title="_("A" tiny="" village");="" }="" else="" if(numhuts="" <="8)" modest="" large="" raucous="" if(engine.activemodule="=" this)="" document.title="title;" $('#location_outside').text(title);="" },="" onarrival:="" function(transition_diff)="" outside.settitle();="" if(!$sm.get('game.outside.seenforest'))="" notifications.notify(outside,="" _("the="" sky="" is="" grey="" and="" the="" wind="" blows="" relentlessly"));="" $sm.set('game.outside.seenforest',="" true);="" outside.updatetrapbutton();="" outside.updatevillage(true);="" engine.movestoresview($('#village'),="" transition_diff);="" gatherwood:="" function()="" _("dry="" brush="" dead="" branches="" litter="" forest="" floor"));="" var="" gatheramt="$SM.get('game.buildings["cart"]'," true)=""> 0 ? 50 : 10;
+		} else if(numHuts <= 4) {
+			title = _("A Tiny Village");
+		} else if(numHuts <= 8) {
+			title = _("A Modest Village");
+		} else if(numHuts <= 14) {
+			title = _("A Large Village");
+		} else {
+			title = _("A Raucous Village");
+		}
+		
+		if(Engine.activeModule == this) {
+			document.title = title;
+		}
+		$('#location_outside').text(title);
+	},
+	
+	onArrival: function(transition_diff) {
+		Outside.setTitle();
+		if(!$SM.get('game.outside.seenForest')) {
+			Notifications.notify(Outside, _("the sky is grey and the wind blows relentlessly"));
+			$SM.set('game.outside.seenForest', true);
+		}
+		Outside.updateTrapButton();
+		Outside.updateVillage(true);
+
+		Engine.moveStoresView($('#village'), transition_diff);
+	},
+	
+	gatherWood: function() {
+		Notifications.notify(Outside, _("dry brush and dead branches litter the forest floor"));
+		var gatherAmt = $SM.get('game.buildings["cart"]', true) > 0 ? 50 : 10;
 		$SM.add('stores.wood', gatherAmt);
 	},
 	
@@ -617,4 +678,3 @@ var Outside = {
 
 	}
 };
-</=></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></span></div></div></div></=></div>

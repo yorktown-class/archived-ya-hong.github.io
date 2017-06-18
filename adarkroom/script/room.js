@@ -683,7 +683,8 @@ var Room = {
 	
 	coolFire: function() {
 		var wood = $SM.get('stores.wood');
-		if($SM.get('game.fire.value') <= room.fireenum.flickering.value="" &&="" $sm.get('game.builder.level')=""> 3 && wood > 0) {
+		if($SM.get('game.fire.value') <= Room.FireEnum.Flickering.value &&
+			$SM.get('game.builder.level') > 3 && wood > 0) {
 			Notifications.notify(Room, _("builder stokes the fire"), true);
 			$SM.set('stores.wood', wood - 1);
 			$SM.set('game.fire',Room.FireEnum.fromInt($SM.get('game.fire.value') + 1));
@@ -926,7 +927,97 @@ var Room = {
 		var good = Room.TradeGoods[thing];
 		var numThings = $SM.get('stores["'+thing+'"]', true);
 		if(numThings < 0) numThings = 0;
-		if(good.maximum <= numthings)="" {="" return;="" }="" var="" storemod="{};" cost="good.cost();" for(var="" k="" in="" cost)="" have="$SM.get('stores["'+k+'"]'," true);="" if(have="" <="" cost[k])="" notifications.notify(room,="" _("not="" enough="" "="" +="" k));="" return="" false;="" else="" storemod[k]="have" -="" cost[k];="" $sm.setm('stores',="" storemod);="" good.buildmsg);="" $sm.add('stores["'+thing+'"]',="" 1);="" },="" build:="" function(buildbtn)="" thing="$(buildBtn).attr('buildThing');" if($sm.get('game.temperature.value')="" _("builder="" just="" shivers"));="" craftable="Room.Craftables[thing];" numthings="0;" switch(craftable.type)="" case="" 'good':="" 'weapon':="" 'tool':="" 'upgrade':="" break;="" 'building':="" if(numthings="" 0)="" if(craftable.maximum="" "+k));="" craftable.buildmsg);="" $sm.add('game.buildings["'+thing+'"]',="" needsworkshop:="" function(type)="" type="=" 'weapon'="" ||="" 'upgrade'="" craftunlocked:="" function(thing)="" if(room.buttons[thing])="" true;="" if($sm.get('game.builder.level')="" 4)="" if(room.needsworkshop(craftable.type)="" &&="" $sm.get('game.buildings["'+'workshop'+'"]',="" true)="==" show="" button="" if="" one="" has="" already="" been="" built="" if($sm.get('game.buildings["'+thing+'"]')=""> 0){
+		if(good.maximum <= numThings) {
+			return;
+		}
+		
+		var storeMod = {};
+		var cost = good.cost();
+		for(var k in cost) {
+			var have = $SM.get('stores["'+k+'"]', true);
+			if(have < cost[k]) {
+				Notifications.notify(Room, _("not enough " + k));
+				return false;
+			} else {
+				storeMod[k] = have - cost[k];
+			}
+		}
+		$SM.setM('stores', storeMod);
+		
+		Notifications.notify(Room, good.buildMsg);
+		
+		$SM.add('stores["'+thing+'"]', 1);
+	},
+	
+	build: function(buildBtn) {
+		var thing = $(buildBtn).attr('buildThing');
+		if($SM.get('game.temperature.value') <= Room.TempEnum.Cold.value) {
+			Notifications.notify(Room, _("builder just shivers"));
+			return false;
+		}
+		var craftable = Room.Craftables[thing];
+		
+		var numThings = 0; 
+		switch(craftable.type) {
+		case 'good':
+		case 'weapon':
+		case 'tool':
+		case 'upgrade':
+			numThings = $SM.get('stores["'+thing+'"]', true);
+			break;
+		case 'building':
+			numThings = $SM.get('game.buildings["'+thing+'"]', true);
+			break;
+		}
+		
+		if(numThings < 0) numThings = 0;
+		if(craftable.maximum <= numThings) {
+			return;
+		}
+		
+		var storeMod = {};
+		var cost = craftable.cost();
+		for(var k in cost) {
+			var have = $SM.get('stores["'+k+'"]', true);
+			if(have < cost[k]) {
+				Notifications.notify(Room, _("not enough "+k));
+				return false;
+			} else {
+				storeMod[k] = have - cost[k];
+			}
+		}
+		$SM.setM('stores', storeMod);
+		
+		Notifications.notify(Room, craftable.buildMsg);
+		
+		switch(craftable.type) {
+		case 'good':
+		case 'weapon':
+		case 'upgrade':
+		case 'tool':
+			$SM.add('stores["'+thing+'"]', 1);
+			break;
+		case 'building':
+			$SM.add('game.buildings["'+thing+'"]', 1);
+			break;
+		}		
+	},
+	
+	needsWorkshop: function(type) {
+		return type == 'weapon' || type == 'upgrade' || type =='tool';
+	},
+	
+	craftUnlocked: function(thing) {
+		if(Room.buttons[thing]) {
+			return true;
+		}
+		if($SM.get('game.builder.level') < 4) return false;
+		var craftable = Room.Craftables[thing];
+		if(Room.needsWorkshop(craftable.type) && $SM.get('game.buildings["'+'workshop'+'"]', true) === 0) return false;
+		var cost = craftable.cost();
+		
+		//show button if one has already been built
+		if($SM.get('game.buildings["'+thing+'"]') > 0){
 			Room.buttons[thing] = true;
 			return true;
 		}
@@ -1081,4 +1172,3 @@ var Room = {
 		}
 	}
 };
-</div></div></div></div></div></div></div></div></div></=></div></div></div></div></div></div></div></div></div></div></div></div></div></=></div></div>
