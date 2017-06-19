@@ -29,6 +29,8 @@
 
     <!--Description-->
     
+        <meta name="description" content="Task1第一题就直接懵逼了……虽然想出这个dp没用多久，但是还是纠结了好久才敢开始写。">
+    
 
     <!--Author-->
     
@@ -37,7 +39,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="Yanghong&#39;s Blog"/>
+        <meta property="og:title" content="2017-3-11离线赛总结"/>
     
 
     <!--Open Graph Description-->
@@ -48,7 +50,7 @@
 
     <!--Type page-->
     
-        <meta property="og:type" content="website" />
+        <meta property="og:type" content="article" />
     
 
     <!--Page Cover-->
@@ -59,7 +61,7 @@
 
     <!-- Title -->
     
-    <title>page - Archives: 2017 - Yanghong&#39;s Blog</title>
+    <title>2017-3-11离线赛总结 - Yanghong&#39;s Blog</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
@@ -163,64 +165,84 @@
 </nav>
 
     <!-- Main Content -->
-    
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
 
-<!-- Page Header -->
-<!-- Set your background image for this header in the theme's configuration: index_cover -->
-<header class="intro-header" style="background-image: url('/images/base/home.jpg')">
+<header class="intro-header" style="background-image: url('/images/cover/0.jpg')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1>2017</h1>
+                <div class="post-heading">
+                    <h1>2017-3-11离线赛总结</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2017-03-11
+                        
+                    </span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/总结/">#总结</a> <a href="/tags/NOIP/">#NOIP</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                </div>
             
-                <div class="post-preview">
-    <a href="/Codeforces Round 307 div.2 D/">
-        <h1 class="post-title archive">
-            Codeforces Round 307 div.2 D. GukiZ and Binary Operations
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-03-10
-    </p>
-</div>
+
+            <!-- Gallery -->
             
-                <div class="post-preview">
-    <a href="/Codeforces Round 320 div.2 D/">
-        <h1 class="post-title archive">
-            Codeforces Round 320 div.2 D. "Or" Game
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-03-10
-    </p>
-</div>
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h3 id="Task1"><a href="#Task1" class="headerlink" title="Task1"></a>Task1</h3><p>第一题就直接懵逼了……虽然想出这个dp没用多久，但是还是纠结了好久才敢开始写。</p>
+<a id="more"></a>
+<p>先考虑较小的情况，相邻两个数字对$x$，$y$（$x&lt;y$)交换，会增加一个一个逆序对。那么只需要如此操作小于或等于$k$次，就可以得到需要的序列。</p>
+<p>令 $dp[x-1][k]$ 为 $[1,x-1]$的序列经过变换后，还剩下k次操作的方案数。<br>这时考虑$x$位由于只有前面的序列经过变换，所以x前的所有数字都小于$x$位上的数，那么将x和前一位交换一次，就可以增加一个逆序对。枚举所有的交换次数，所以：<br>$$dp[x][k]=\sum_{i=max(1,x-k)}^{x}dp[i][k-i]$$<br>再加上前缀优化就可以过了。</p>
+<p>由于这道题卡内存，还需要加上滚动数组优化。但是我根本没注意到，直接就MLE了。</p>
+<h3 id="Task2"><a href="#Task2" class="headerlink" title="Task2"></a>Task2</h3><p>第二题相比第一题我感觉反而水一点。-_-||<br></p>
+<p>先拆开公式：<br>$$<br>\sum_{i=1}^{m}(x_i-p)^2=\sum_{i=1}^m (xi^2-2p \cdot xi+p^2)<br>$$<br>发现值只跟$\sum xi^2$,$\sum xi$有关。<br>$$<br>(\sum_{i=1}^m xi^2-2p \cdot xi-p^2)*m\\\<br>=m \cdot (\sum xi^2)-m \cdot \sum (xi+2p)-p^2 \cdot m^2\\\<br>=m \cdot (\sum xi^2)-\sum 3xi+\sum xi^2\\\<br>=m \cdot (\sum xi^2)-2\sum xi<br>$$<br>如此就可以不用 double 而用 long long 来储存了。(double 应该会被卡）</p>
+<p>按照w（和z）把物品和询问排序，只加入能够研究的点，然后，可以用BIT来直接求和回答询问。</p>
+<p>其实写出这个也没有花太久时间（发现可以直接用long long 倒是用了很久）。但是一直怕中间int会溢出，反复看了好几遍</p>
+<h3 id="Task3"><a href="#Task3" class="headerlink" title="Task3"></a>Task3</h3><p>这道题其实也不是很难，但是还是没有想出来……</p>
+<p>画图可以发现，一个奇数点的到根路径长度加上一个偶数的的到根路径长度，可以直接抵消LCA到根的路径长度。<br>那么计算路径长度就可以不管LCA了。<br>然后，把奇数点的路径放在一个数组里，把偶数点的的路径放在一个数组里。那么问题就转变为两个数组数字相加求第k小的问题了。</p>
+<p>其实考试的时候也想到了LCA到根的两个距离是相反的，但是就是没想到相加起来会等于0……<br>然后60分的暴力由于只有1个地方开了 long long 所以只得了5分。</p>
+
+
+                
+            </div>
+
+            <!-- Comments -->
             
-            <div class="archive-before-pagination"></div>
-            <ul class="pager">
-    
-        <li class="previous"><a href="/archives/2017/page/3/">&larr;  Newer Posts</a></li>
-    
-    
-</ul>
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
         </div>
     </div>
-</div>
-
+</article>
 
     <!-- Footer -->
     <hr />
