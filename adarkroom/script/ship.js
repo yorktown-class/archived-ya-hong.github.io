@@ -72,43 +72,7 @@ var Ship = {
 			cooldown: Ship.LIFTOFF_COOLDOWN
 		}).appendTo('div#shipPanel');
 		
-		if($SM.get('game.spaceShip.hull') <= 0) {
-			Button.setDisabled(b, true);
-		}
-		
-		// Init Space
-		Space.init();
-		
-		//subscribe to stateUpdates
-		$.Dispatch('stateUpdate').subscribe(Ship.handleStateUpdates);
-	},
-	
-	options: {}, // Nothing for now
-	
-	onArrival: function(transition_diff) {
-		Ship.setTitle();
-		if(!$SM.get('game.spaceShip.seenShip')) {
-			Notifications.notify(Ship, _('somewhere above the debris cloud, the wanderer fleet hovers. been on this rock too long.'));
-			$SM.set('game.spaceShip.seenShip', true);
-		}
-
-		Engine.moveStoresView(null, transition_diff);
-	},
-	
-	setTitle: function() {
-		if(Engine.activeModule == this) {
-			document.title = _("An Old Starship");
-		}
-	},
-	
-	reinforceHull: function() {
-		if($SM.get('stores["alien alloy"]', true) < Ship.ALLOY_PER_HULL) {
-			Notifications.notify(Ship, _("not enough alien alloy"));
-			return false;
-		}
-		$SM.add('stores["alien alloy"]', -Ship.ALLOY_PER_HULL);
-		$SM.add('game.spaceShip.hull', 1);
-		if($SM.get('game.spaceShip.hull') > 0) {
+		if($SM.get('game.spaceShip.hull') <= 0)="" {="" button.setdisabled(b,="" true);="" }="" init="" space="" space.init();="" subscribe="" to="" stateupdates="" $.dispatch('stateupdate').subscribe(ship.handlestateupdates);="" },="" options:="" {},="" nothing="" for="" now="" onarrival:="" function(transition_diff)="" ship.settitle();="" if(!$sm.get('game.spaceship.seenship'))="" notifications.notify(ship,="" _('somewhere="" above="" the="" debris="" cloud,="" wanderer="" fleet="" hovers.="" been="" on="" this="" rock="" too="" long.'));="" $sm.set('game.spaceship.seenship',="" engine.movestoresview(null,="" transition_diff);="" settitle:="" function()="" if(engine.activemodule="=" this)="" document.title="_("An" old="" starship");="" reinforcehull:="" if($sm.get('stores["alien="" alloy"]',="" true)="" <="" ship.alloy_per_hull)="" _("not="" enough="" alien="" alloy"));="" return="" false;="" $sm.add('stores["alien="" -ship.alloy_per_hull);="" $sm.add('game.spaceship.hull',="" 1);="" if($sm.get('game.spaceship.hull')=""> 0) {
 			Button.setDisabled($('#liftoffButton', Ship.panel), false);
 		}
 		$('#hullRow .row_val', Ship.panel).text($SM.get('game.spaceShip.hull'));
@@ -172,3 +136,4 @@ var Ship = {
 		
 	}
 };
+</=></div></div></div></div></div></div></div></div></div>

@@ -76,3 +76,4 @@ var Notifications = {
 		}
 	}
 };
+</div></div></div>

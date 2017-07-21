@@ -399,94 +399,7 @@ var Events = {
 				World.updateSupplies();
 			}
 			var dmg = -1;
-			if(Math.random() <= World.getHitChance()) {
-				dmg = weapon.damage;
-				if(typeof dmg == 'number') {
-					if(weapon.type == 'unarmed' && $SM.hasPerk('boxer')) {
-						dmg *= 2;
-					}
-					if(weapon.type == 'unarmed' && $SM.hasPerk('martial artist')) {
-						dmg *= 3;
-					}
-					if(weapon.type == 'unarmed' && $SM.hasPerk('unarmed master')) {
-						dmg *= 2;
-					}
-					if(weapon.type == 'melee' && $SM.hasPerk('barbarian')) {
-						dmg = Math.floor(dmg * 1.5);
-					}
-				}
-			}
-
-			var attackFn = weapon.type == 'ranged' ? Events.animateRanged : Events.animateMelee;
-			attackFn($('#wanderer'), dmg, function() {
-				if($('#enemy').data('hp') <= 0 && !Events.won) {
-					// Success!
-					Events.winFight();
-				}
-			});
-		}
-	},
-
-	damage: function(fighter, enemy, dmg) {
-		var enemyHp = enemy.data('hp');
-		var msg = "";
-		if(typeof dmg == 'number') {
-			if(dmg < 0) {
-				msg = _('miss');
-				dmg = 0;
-			} else {
-				msg = '-' + dmg;
-				enemyHp = ((enemyHp - dmg) < 0) ? 0 : (enemyHp - dmg);
-				enemy.data('hp', enemyHp);
-				if(fighter.attr('id') == 'enemy') {
-					World.setHp(enemyHp);
-					Events.setHeal();
-				}
-				Events.updateFighterDiv(enemy);
-			}
-		} else {
-			if(dmg == 'stun') {
-				msg = _('stunned');
-				enemy.data('stunned', Events.STUN_DURATION);
-			}
-		}
-
-		Events.drawFloatText(msg, $('.hp', enemy));
-	},
-
-	animateMelee: function(fighter, dmg, callback) {
-		var start, end, enemy;
-		if(fighter.attr('id') == 'wanderer') {
-			start = {'left': '50%'};
-			end = {'left': '25%'};
-			enemy = $('#enemy');
-		} else {
-			start = {'right': '50%'};
-			end = {'right': '25%'};
-			enemy = $('#wanderer');
-		}
-
-		fighter.stop(true, true).animate(start, Events._FIGHT_SPEED, function() {
-
-			Events.damage(fighter, enemy, dmg);
-
-			$(this).animate(end, Events._FIGHT_SPEED, callback);
-		});
-	},
-
-	animateRanged: function(fighter, dmg, callback) {
-		var start, end, enemy;
-		if(fighter.attr('id') == 'wanderer') {
-			start = {'left': '25%'};
-			end = {'left': '50%'};
-			enemy = $('#enemy');
-		} else {
-			start = {'right': '25%'};
-			end = {'right': '50%'};
-			enemy = $('#wanderer');
-		}
-
-		$('<div>').css(start).addClass('bullet').text('o').appendTo('#description')
+			if(Math.random() <= 0="" world.gethitchance())="" {="" dmg="weapon.damage;" if(typeof="" 'number')="" if(weapon.type="=" 'unarmed'="" &&="" $sm.hasperk('boxer'))="" *="2;" }="" $sm.hasperk('martial="" artist'))="" $sm.hasperk('unarmed="" master'))="" 'melee'="" $sm.hasperk('barbarian'))="" 1.5);="" var="" attackfn="weapon.type" =="ranged" ?="" events.animateranged="" :="" events.animatemelee;="" attackfn($('#wanderer'),="" dmg,="" function()="" if($('#enemy').data('hp')="" <="0" !events.won)="" success!="" events.winfight();="" });="" },="" damage:="" function(fighter,="" enemy,="" dmg)="" enemyhp="enemy.data('hp');" msg="" ;="" if(dmg="" 0)="" else="" +="" dmg;="" -="" (enemyhp="" dmg);="" enemy.data('hp',="" enemyhp);="" if(fighter.attr('id')="=" 'enemy')="" world.sethp(enemyhp);="" events.setheal();="" events.updatefighterdiv(enemy);="" 'stun')="" enemy.data('stunned',="" events.stun_duration);="" events.drawfloattext(msg,="" $('.hp',="" enemy));="" animatemelee:="" callback)="" start,="" end,="" enemy;="" 'wanderer')="" start="{'left':" '50%'};="" end="{'left':" '25%'};="" enemy="$('#enemy');" fighter.stop(true,="" true).animate(start,="" events._fight_speed,="" events.damage(fighter,="" $(this).animate(end,="" callback);="" animateranged:="" $('<div="">').css(start).addClass('bullet').text('o').appendTo('#description')
 			.animate(end, Events._FIGHT_SPEED * 2, 'linear', function() {
 
 			Events.damage(fighter, enemy, dmg);
@@ -507,44 +420,7 @@ var Events = {
 			var toHit = scene.hit;
 			toHit *= $SM.hasPerk('evasive') ? 0.8 : 1;
 			var dmg = -1;
-			if(Math.random() <= toHit) {
-				dmg = scene.damage;
-			}
-
-			var attackFn = scene.ranged ? Events.animateRanged : Events.animateMelee;
-
-			attackFn($('#enemy'), dmg, function() {
-					if($('#wanderer').data('hp') <= 0) {
-						// Failure!
-						clearTimeout(Events._enemyAttackTimer);
-						Events.endEvent();
-						World.die();
-					}
-			});
-		}
-    },
-
-	endFight: function() {
-		Events.fought = true;
-		clearTimeout(Events._enemyAttackTimer);
-		Events.removePause($('#pause'), 'end');
-	},
-
-	winFight: function() {
-		Engine.setTimeout(function() {
-			if(Events.fought) {
-				return;
-			}
-			Events.endFight();
-			$('#enemy').animate({opacity: 0}, 300, 'linear', function() {
-				Engine.setTimeout(function() {
-					var scene = Events.activeEvent().scenes[Events.activeScene];
-					var leaveBtn = false;
-					var desc = $('#description', Events.eventPanel());
-					var btns = $('#buttons', Events.eventPanel());
-					desc.empty();
-					btns.empty();
-					$('<div>').text(scene.deathMessage).appendTo(desc);
+			if(Math.random() <= tohit)="" {="" dmg="scene.damage;" }="" var="" attackfn="scene.ranged" ?="" events.animateranged="" :="" events.animatemelee;="" attackfn($('#enemy'),="" dmg,="" function()="" if($('#wanderer').data('hp')="" <="0)" failure!="" cleartimeout(events._enemyattacktimer);="" events.endevent();="" world.die();="" });="" },="" endfight:="" events.fought="true;" events.removepause($('#pause'),="" 'end');="" winfight:="" engine.settimeout(function()="" if(events.fought)="" return;="" events.endfight();="" $('#enemy').animate({opacity:="" 0},="" 300,="" 'linear',="" scene="Events.activeEvent().scenes[Events.activeScene];" leavebtn="false;" desc="$('#description'," events.eventpanel());="" btns="$('#buttons'," desc.empty();="" btns.empty();="" $('<div="">').text(scene.deathMessage).appendTo(desc);
 
 					var takeETbtn = Events.drawLoot(scene.loot);
 
@@ -782,59 +658,7 @@ var Events = {
 			var skipButtonSet = stateSkipButtonSet || false;
 			var weight = Path.getWeight(name);
 			var freeSpace = Path.getFreeSpace();
-			if(weight <= freeSpace) {
-				var num = btn.data('numLeft');
-				num--;
-				btn.data('numLeft', num);
-				// #dropMenu gets removed by this.
-				btn.text(_(name) + ' [' + num + ']');
-				if(num === 0) {
-					Button.setDisabled(btn);
-					btn.animate({'opacity':0}, 300, 'linear', function() {
-						$(this).parent().remove();
-						if($('#lootButtons').children().length == 1) {
-							$('#lootButtons').remove();
-						}
-					});
-				}
-				var curNum = Path.outfit[name];
-				curNum = typeof curNum == 'number' ? curNum : 0;
-				curNum++;
-				Path.outfit[name] = curNum;
-				World.updateSupplies();
-
-				if(!skipButtonSet){
-					Events.setTakeAll();
-				}
-			}
-			if(!skipButtonSet){
-				Events.drawDrop(btn);
-			}
-		}
-	},
-
-	takeAll: function(btn){
-		var target = $('#'+ btn.attr('id').substring(4));
-		for(var k = 0; k < btn.data('numLeft'); k++){
-			Events.getLoot(target, true);
-		}
-		Events.setTakeAll();
-	},
-
-	takeEverything: function(btn){
-		$('#lootButtons').children('.lootRow').each(function(i){
-			var target = $(this).children('.lootTakeAll').first();
-			if(!target.hasClass('disabled')){
-				Events.takeAll(target);
-			}
-		});
-		if(btn.data('canLeave')){
-			btn.data('leaveBtn').click();
-		}
-	},
-
-	createFighterDiv: function(chara, hp, maxhp) {
-		var fighter = $('<div>').addClass('fighter').text(_(chara)).data('hp', hp).data('maxHp', maxhp).data('refname',chara);
+			if(weight <= freespace)="" {="" var="" num="btn.data('numLeft');" num--;="" btn.data('numleft',="" num);="" #dropmenu="" gets="" removed="" by="" this.="" btn.text(_(name)="" +="" '="" ['="" ']');="" if(num="==" 0)="" button.setdisabled(btn);="" btn.animate({'opacity':0},="" 300,="" 'linear',="" function()="" $(this).parent().remove();="" if($('#lootbuttons').children().length="=" 1)="" $('#lootbuttons').remove();="" }="" });="" curnum="Path.outfit[name];" 'number'="" ?="" :="" 0;="" curnum++;="" path.outfit[name]="curNum;" world.updatesupplies();="" if(!skipbuttonset){="" events.settakeall();="" events.drawdrop(btn);="" },="" takeall:="" function(btn){="" target="$('#'+" btn.attr('id').substring(4));="" for(var="" k="0;" <="" btn.data('numleft');="" k++){="" events.getloot(target,="" true);="" takeeverything:="" $('#lootbuttons').children('.lootrow').each(function(i){="" if(!target.hasclass('disabled')){="" events.takeall(target);="" if(btn.data('canleave')){="" btn.data('leavebtn').click();="" createfighterdiv:="" function(chara,="" hp,="" maxhp)="" fighter="$('<div">').addClass('fighter').text(_(chara)).data('hp', hp).data('maxHp', maxhp).data('refname',chara);
 		$('<div>').addClass('hp').text(hp+'/'+maxhp).appendTo(fighter);
 		return fighter;
 	},
@@ -1146,3 +970,4 @@ var Events = {
 		}, delay * 1000);
 	}
 };
+</div></div></div></div></div></div></textarea></div></div></=></div></div></span></div></div></div></span></div></div></div></div></div></div></div></div></=></=></div></div></div></div></div></div></div></span></div></div>

@@ -29,7 +29,8 @@
 
     <!--Description-->
     
-        <meta name="description" content="题目：http://codeforces.com/contest/586/problem/E题解：先模拟转移的规律。然后发现它跟 Stern–Brocot tree 有点关系（ 当然你要先知道有 Stern–Brocot tree …… ）">
+        <meta name="description" content="Contributing to A Dark RoomHello and welcome, contributors both new, and old.
+Like most projects on GitHub, A Dark Room is open source, and thrives of">
     
 
     <!--Author-->
@@ -39,7 +40,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="Codeforces Round 325 div.2 E. Alice, Bob, Oranges and Apples"/>
+        <meta property="og:title" content="Yanghong&#39;s Blog"/>
     
 
     <!--Open Graph Description-->
@@ -50,7 +51,7 @@
 
     <!--Type page-->
     
-        <meta property="og:type" content="article" />
+        <meta property="og:type" content="website" />
     
 
     <!--Page Cover-->
@@ -61,7 +62,7 @@
 
     <!-- Title -->
     
-    <title>Codeforces Round 325 div.2 E. Alice, Bob, Oranges and Apples - Yanghong&#39;s Blog</title>
+    <title>Yanghong&#39;s Blog</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
@@ -176,21 +177,25 @@
 </nav>
 
     <!-- Main Content -->
-    <!-- Page Header -->
+    
+
+
+    <section class="main">
+        <!-- Page Header -->
 <!-- Set your background image for this header in your post front-matter: cover -->
 
-<header class="intro-header" style="background-image: url('/images/cover/0.jpg')">
+<header class="intro-header" style="background-image: url('/images/base/home.jpg')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="post-heading">
-                    <h1>Codeforces Round 325 div.2 E. Alice, Bob, Oranges and Apples</h1>
+                    <h1>Untitled</h1>
                     
                     <span class="meta">
                         <!-- Date and Author -->
                         
                         
-                            2017-03-10
+                            2017-07-02
                         
                     </span>
                 </div>
@@ -206,46 +211,21 @@
 
             <!-- Tags and categories -->
            
-                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
-                    
-                        
-
-
-<a href="/tags/Codeforces/">#Codeforces</a> <a href="/tags/数学/">#数学</a>
-
-
-                    
-                </div>
-                <div class="col-lg-4 col-md-5 post-categories">
-                    
-                </div>
-            
 
             <!-- Gallery -->
             
 
             <!-- Post Main Content -->
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <h3 id="题目：http-codeforces-com-contest-586-problem-E"><a href="#题目：http-codeforces-com-contest-586-problem-E" class="headerlink" title="题目：http://codeforces.com/contest/586/problem/E"></a>题目：<a href="http://codeforces.com/contest/586/problem/E" target="_blank" rel="external">http://codeforces.com/contest/586/problem/E</a></h3><h3 id="题解："><a href="#题解：" class="headerlink" title="题解："></a>题解：</h3><p>先模拟转移的规律。然后发现它跟 Stern–Brocot tree 有点关系（ 当然你要先知道有 Stern–Brocot tree …… ）<br><img src="\images\Codeforces Round 325 div.2 E Ep1.png" alt=""></p>
-<a id="more"></a>
-<p>一开始，Alice就是$\frac10$，Bob就是$\frac01$。转移的过程就是找到答案的过程（$\frac xy$)。</p>
-<p>例如对于<code>1 4</code>，那么就是找到$\frac14$。</p>
-<ol>
-<li>Bob为$\frac01$，Alice为$\frac10$，在根节点上搜索。</li>
-<li>向左移动，Bob为$\frac01$，Alice为$\frac11$，位于$\frac12$</li>
-<li>向左移动，Bob为$\frac01$，Alice为$\frac12$，位于$\frac13$</li>
-<li>向左移动，找到$\frac14$</li>
-</ol>
-<p>向左就是Bob向Alice转移，向右就是Alice向Bob转移。</p>
-<p>那么如何找到答案。</p>
-<p>首先答案肯定是个最简分数，否则不会出现在树上。<br><br>然后：</p>
-<ol>
-<li>对于根节点如果分子比分母大，那么就在左区间，否则在右区间。</li>
-<li>如果$x&gt;y$，那么走完一步就等同于在根节点找$x-y$</li>
-<li>如果$x&lt;y$，那么走完一步就等同于在根节点找$y-x$</li>
-</ol>
-<p>而整个步骤就像是gcd的过程。它也可以用类似的方法求解。<br>复杂度$O(\log n)$</p>
-<h3 id="代码：http-codeforces-com-contest-586-submission-24737673"><a href="#代码：http-codeforces-com-contest-586-submission-24737673" class="headerlink" title="代码：http://codeforces.com/contest/586/submission/24737673"></a>代码：<a href="http://codeforces.com/contest/586/submission/24737673" target="_blank" rel="external">http://codeforces.com/contest/586/submission/24737673</a></h3>
+                <h1 id="Contributing-to-A-Dark-Room"><a href="#Contributing-to-A-Dark-Room" class="headerlink" title="Contributing to A Dark Room"></a>Contributing to A Dark Room</h1><p>Hello and welcome, contributors both new, and old.</p>
+<p>Like most projects on GitHub, A Dark Room is open source, and thrives off contributions from members of the community. We appreciate any pull requests or issues that you may open in the project, no matter the size.<br><br><hr><br>Before contributing to the project, there are a few things you should look over to ensure your contribution is done correctly. </p>
+<p>Most of the projects code is written in JavaScript. We would prefer all submitted JavaScript be <a href="http://jshint.com/" target="_blank" rel="external">JSHint</a> compliant.</p>
+<blockquote>
+<p>“JSHint is a community-driven tool to detect errors and potential problems in JavaScript code and to enforce your team’s coding conventions.”<br><br><br><br></p>
+</blockquote>
+<p>Before opening a new issue, try to check the projects <a href="https://github.com/doublespeakgames/adarkroom/issues" target="_blank" rel="external">issues</a> or <a href="https://github.com/doublespeakgames/adarkroom/wiki" target="_blank" rel="external">wiki</a>.<br>Doing so will help prevent needless double issues.<br><br>Most of the time you will be able to find what you are looking for in one of those places. If not, please open an issue and describe your problem with as much detail as possible.</p>
+<p>Lastly, be nice, patient, open to new ideas, and have some fun!</p>
+
 
                 
             </div>
@@ -261,6 +241,12 @@
         </div>
     </div>
 </article>
+    </section>
+
+
+
+
+
 
     <!-- Footer -->
     <hr />

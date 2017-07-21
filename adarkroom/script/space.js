@@ -126,11 +126,11 @@ var Space = {
 			progress: function() {
 				// Collision detection
 				var t = $(this);
-				if(t.data('xMin') <= Space.shipX && t.data('xMax') >= Space.shipX) {
+				if(t.data('xMin') <= space.shipx="" &&="" t.data('xmax')="">= Space.shipX) {
 					var aY = t.css('top');
 					aY = parseFloat(aY.substring(0, aY.length - 2));
 					
-					if(aY <= Space.shipY && aY + t.data('height') >= Space.shipY) {
+					if(aY <= space.shipy="" &&="" ay="" +="" t.data('height')="">= Space.shipY) {
 						// Collision
 						Engine.log('collision');
 						t.remove();
@@ -424,16 +424,16 @@ var Space = {
 									.text(_('score for this game: {0}', Score.calculateScore()))
 									.appendTo('.centerCont')
 									.animate({opacity:1},1500);
-								$('<br />')
+								$('<br>')
 									.appendTo('.centerCont');
 								$('<span>')
 									.addClass('endGame')
 									.text(_('total score: {0}', Prestige.get().score))
 									.appendTo('.centerCont')
 									.animate({opacity:1},1500);
-								$('<br />')
+								$('<br>')
 									.appendTo('.centerCont');
-								$('<br />')
+								$('<br>')
 									.appendTo('.centerCont');
 								$('#starsContainer').remove();
 								$('#content, #notifications').remove();
@@ -443,18 +443,18 @@ var Space = {
 									.click(Engine.confirmDelete)
 									.appendTo('.centerCont')
 									.animate({opacity:1},1500);
-								$('<br />')
+								$('<br>')
 									.appendTo('.centerCont');
-								$('<br />')
+								$('<br>')
 										.appendTo('.centerCont');
 								$('<span>')
 										.addClass('endGame')
 										.text(_('expanded story. alternate ending. behind the scenes commentary. get the app.'))
 										.appendTo('.centerCont')
 										.animate({opacity:1}, 1500);
-								$('<br />')
+								$('<br>')
 										.appendTo('.centerCont');
-								$('<br />')
+								$('<br>')
 										.appendTo('.centerCont');
 								$('<span>')
 									.addClass('endGame endGameOption')
@@ -462,7 +462,7 @@ var Space = {
 									.click(function() { window.open('https://itunes.apple.com/app/apple-store/id736683061?pt=2073437&ct=gameover&mt=8'); })
 									.appendTo('.centerCont')
 									.animate({opacity:1},1500);
-								$('<br />')
+								$('<br>')
 										.appendTo('.centerCont');
 								$('<span>')
 										.addClass('endGame endGameOption')
@@ -534,3 +534,4 @@ var Space = {
 		
 	}
 };
+</span></span></span></span></span></span></center></div></div></div></div></div></div></div></=></=></div></div></div></div></div></div>

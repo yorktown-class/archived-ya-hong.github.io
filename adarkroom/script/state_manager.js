@@ -9,7 +9,7 @@
  *
  * When a state is changed, an update event is sent out containing the name of the state
  * changed or in the case of multiple changes (.setM, .addM) the parent class changed.
- * Event: type: 'stateUpdate', stateName: <path of state or parent state>
+ * Event: type: 'stateUpdate', stateName: <path of="" state="" or="" parent=""></path>
  *
  * Original file created by: Michael Galusha
  */
@@ -62,22 +62,7 @@ var StateManager = {
 		}
 		var obj = State;
 		var w = null;
-		for(var i=0, len=words.length-1;i<len;i++){
-			w = words[i];
-			if(obj[w] === undefined ) obj[w] = {};
-			obj = obj[w];
-		}
-		obj[words[i]] = value;
-		return obj;
-	},
-
-	//set single state
-	//if noEvent is true, the update event won't trigger, useful for setting multiple states first
-	set: function(stateName, value, noEvent) {
-		var fullPath = $SM.buildPath(stateName);
-
-		//make sure the value isn't over the engine maximum
-		if(typeof value == 'number' && value > $SM.MAX_STORE) value = $SM.MAX_STORE;
+		for(var i=0, len=words.length-1;i<len;i++){ w="words[i];" if(obj[w]="==" undefined="" )="" obj[w]="{};" obj="obj[w];" }="" obj[words[i]]="value;" return="" obj;="" },="" set="" single="" state="" if="" noevent="" is="" true,="" the="" update="" event="" won't="" trigger,="" useful="" for="" setting="" multiple states="" first="" set:="" function(statename,="" value,="" noevent)="" {="" var="" fullpath="$SM.buildPath(stateName);" make="" sure="" value="" isn't="" over="" engine="" maximum="" if(typeof="" 'number'="" &&=""> $SM.MAX_STORE) value = $SM.MAX_STORE;
 
 		try{
 			eval('('+fullPath+') = value');
@@ -359,82 +344,4 @@ var StateManager = {
 				}
 				income.timeLeft--;
 
-				if(income.timeLeft <= 0) {
-					Engine.log('collection income from ' + source);
-					if(source == 'thieves') $SM.addStolen(income.stores);
-
-					var cost = income.stores;
-					var ok = true;
-					if (source != 'thieves') {
-						for (var k in cost) {
-							var have = $SM.get('stores["' + k + '"]', true);
-							if (have + cost[k] < 0) {
-								ok = false;
-								break;
-							}
-						}
-					}
-
-					if(ok){
-						$SM.addM('stores', income.stores, true);
-					}
-					changed = true;
-					if(typeof income.delay == 'number') {
-						income.timeLeft = income.delay;
-					}
-				}
-			}
-		}
-		if(changed){
-			$SM.fireUpdate('income', true);
-		}
-		Engine._incomeTimeout = Engine.setTimeout($SM.collectIncome, 1000);
-	},
-
-	//Thieves
-	addStolen: function(stores) {
-		for(var k in stores) {
-			var old = $SM.get('stores["'+k+'"]', true);
-			var short = old + stores[k];
-			//if they would steal more than actually owned
-			if(short < 0){
-				$SM.add('game.stolen["'+k+'"]', (stores[k] * -1) + short);
-			} else {
-				$SM.add('game.stolen["'+k+'"]', stores[k] * -1);
-			}
-		}
-	},
-
-	startThieves: function() {
-		$SM.set('game.thieves', 1);
-		$SM.setIncome('thieves', {
-			delay: 10,
-			stores: {
-				'wood': -10,
-				'fur': -5,
-				'meat': -5
-			}
-		});
-	},
-
-	//Misc
-	num: function(name, craftable) {
-		switch(craftable.type) {
-		case 'good':
-		case 'tool':
-		case 'weapon':
-		case 'upgrade':
-		case 'special':
-			return $SM.get('stores["'+name+'"]', true);
-		case 'building':
-			return $SM.get('game.buildings["'+name+'"]', true);
-		}
-	},
-
-	handleStateUpdates: function(e){
-
-	}
-};
-
-//alias
-var $SM = StateManager;
+				if(income.timeLeft </len;i++){>
