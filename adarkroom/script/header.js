@@ -25,4 +25,4 @@ var Header = {
 				}
 			}).appendTo($('div#header'));
 	}
-};</div>
+};

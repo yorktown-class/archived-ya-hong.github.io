@@ -125,7 +125,7 @@
 					.appendTo(optionsList);
 
 				$.each(langs, function(name,display){
-					$('</li><li>')
+					$('<li>')
 						.text(display)
 						.attr('data-language', name)
 						.on("click", function() { Engine.switchLanguage(this); })
@@ -483,7 +483,27 @@
 		},
 
 		findStylesheet: function(title) {
-			for(var i=0; i<document.stylesheets.length; i++)="" {="" var="" sheet="document.styleSheets[i];" if(sheet.title="=" title)="" return="" sheet;="" }="" null;="" },="" islightsoff:="" function()="" darkcss="Engine.findStylesheet('darkenLights');" if="" (="" !="null" &&="" !darkcss.disabled="" )="" true;="" false;="" turnlightsoff:="" (darkcss="=" null)="" $('head').append('<link="" rel="stylesheet" href="css/dark.css" type="text/css" title="darkenLights">');
+			for(var i=0; i<document.styleSheets.length; i++) {
+				var sheet = document.styleSheets[i];
+				if(sheet.title == title) {
+					return sheet;
+				}
+			}
+			return null;
+		},
+
+		isLightsOff: function() {
+			var darkCss = Engine.findStylesheet('darkenLights');
+			if ( darkCss != null && !darkCss.disabled ) {
+				return true;
+			}
+			return false;
+		},
+
+		turnLightsOff: function() {
+			var darkCss = Engine.findStylesheet('darkenLights');
+			if (darkCss == null) {
+				$('head').append('<link rel="stylesheet" href="css/dark.css" type="text/css" title="darkenLights" />');
 				$('.lightsOff').text(_('lights on.'));
 				$SM.set('config.lightsOff', true, true);
 			} else if (darkCss.disabled) {
@@ -809,7 +829,7 @@ function inView(dir, elem){
 		}else if( dir == 'down' ){
 				return ( elTop > scTop );
 		}else{
-				return ( ( elBot <= scbot="" )="" &&="" (="" eltop="">= scTop ) );
+				return ( ( elBot <= scBot ) && ( elTop >= scTop ) );
 		}
 
 }
@@ -842,4 +862,3 @@ $.Dispatch = function( id ) {
 $(function() {
 	Engine.init();
 });
-</=></document.stylesheets.length;></span></span></span></span></span></span></span></span></li></ul></span></span></div></div>
