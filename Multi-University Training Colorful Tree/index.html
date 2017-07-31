@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+	<!-- hexo-inject:begin --><!-- hexo-inject:end --><!--Mathjax-->
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+            processEscapes: true,
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+    }); 
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';                 
+        }       
+    });
+    </script>
+    <script type="text/javascript" async
+        src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="题目描述给定一颗树,节点$i$ 上有颜色$c_i$ 。定义一条路径$(i,j)$ 的值为$i$ 到 $j$ 的颜色种数。统计所有$\frac{n \times (n-1)}{2}$ 条路径的值。
+There is a tree with n nodes, each of which has a ty">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="Yanghong">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="Multi-University Training Colorful Tree"/>
+    
+
+    <!--Open Graph Description-->
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="Yanghong&#39;s Blog"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+        <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>Multi-University Training Colorful Tree - Yanghong&#39;s Blog</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Google Analytics -->
+    
+
+
+    <!-- favicon -->
+    
+    <link rel="icon" href="images/base/favicon.ico"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+    
+	
+</head>
+
+
+<body>
+
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Home</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/tags">
+                            
+                                Tags
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/music">
+                            
+                                Music
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/BWE">
+                            
+                                BWE
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://github.com/klugjo/hexo-theme-clean-blog">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+
+        
+
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('/images/cover/7.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>Multi-University Training Colorful Tree</h1>
+                    
+                    <h2 class="post-subheading">
+                        Multi-UniversityTrainingContest1 1003
+                    </h2>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2017-07-28
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/树/">#树</a> <a href="/tags/数据结构/">#数据结构</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                </div>
+            
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>给定一颗树,节点$i$ 上有颜色$c_i$ 。定义一条路径$(i,j)$ 的值为$i$ 到 $j$ 的颜色种数。统计所有$\frac{n \times (n-1)}{2}$ 条路径的值。</p>
+<p>There is a tree with n nodes, each of which has a type of color represented by an integer, where the color of node $i$ is $c_i$.</p>
+<p>The path between each two different nodes is unique, of which we define the value as the number of different colors appearing in it.</p>
+<p>Calculate the sum of values of all paths on the tree that has $\frac{n \times (n−1)}{2}$ paths in total.</p>
+<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>这题我不是题解做法，想法好像正好和正解相反。所以麻烦了很多,而且复杂度也高，但是比较容易想到。</p>
+<hr>
+<p>一开始是想要统计每一种颜色的贡献。</p>
+<p>对于一个点，它的贡献就是经过它的路径。这个可以通过它的所有子树的大小来计算。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;++i) &#123;</div><div class="line">    <span class="keyword">int</span> sz=<span class="number">1</span>;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;g[i].size();++j) &#123;</div><div class="line">        res+=sz*size[g[i][j]];</div><div class="line">        sz+=size[g[i][j]];</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>但是有一个很麻烦的地方：一个条路径经过同一种颜色两次只当作一次计算。然后大概可以这样解决：</p>
+<p><img src="/images/Multi-University Training Colorful Tree pic1.png" alt=""></p>
+<p>这样就可以避免重复。</p>
+<p>如果直接这么写，对于一种颜色是好处理的。但是不同颜色不能一起计算（必须要把树还原回去）。那么处理同一种颜色的复杂度就要尽量低，而且只能跟这种颜色的数量有关。</p>
+<p>然后想到了一种比较好的方式把点删去。我们还是一起处理同一种颜色，但是对于相同的颜色，可以按后续遍历的顺序来处理。那么这时将一个点删去时，就可以直接删去整个子树（因为子树里已经没有这种颜色的节点了）。</p>
+<p>现在有了一种正确的方法来统计答案，剩下就是要能快速求出一个节点的子树大小。可以利用dfs序和线段树来解决。删除子树时，可以在线段树上将对应区间赋值为0；询问子树大小时，可以在线段树上查询对应区间。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> M (200005)</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">Rd</span><span class="params">(<span class="keyword">int</span> &amp;x)</span> </span>&#123;</div><div class="line">	x=<span class="number">0</span>;</div><div class="line">	<span class="keyword">char</span> c;</div><div class="line">	<span class="keyword">while</span> (c=getchar(),!<span class="built_in">isdigit</span>(c));</div><div class="line">	<span class="keyword">do</span> x=(x&lt;&lt;<span class="number">1</span>)+(x&lt;&lt;<span class="number">3</span>)+(c^<span class="number">48</span>);</div><div class="line">	<span class="keyword">while</span> (c=getchar(),<span class="built_in">isdigit</span>(c));</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">int</span> val[(M+<span class="number">5</span>)&lt;&lt;<span class="number">2</span>];</div><div class="line"><span class="keyword">int</span> add[(M+<span class="number">5</span>)&lt;&lt;<span class="number">2</span>];</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">down</span><span class="params">(<span class="keyword">int</span> p,<span class="keyword">int</span> l,<span class="keyword">int</span> r)</span> </span>&#123;</div><div class="line">	<span class="keyword">if</span> (!add[p]) <span class="keyword">return</span>;</div><div class="line">	<span class="keyword">int</span> mid=(l+r)&gt;&gt;<span class="number">1</span>;</div><div class="line">	val[p&lt;&lt;<span class="number">1</span>]=add[p]*(mid-l+<span class="number">1</span>);</div><div class="line">	add[p&lt;&lt;<span class="number">1</span>]=add[p];</div><div class="line">	val[p&lt;&lt;<span class="number">1</span>|<span class="number">1</span>]=add[p]*(r-mid);</div><div class="line">	add[p&lt;&lt;<span class="number">1</span>|<span class="number">1</span>]=add[p];</div><div class="line">	add[p]=<span class="number">0</span>;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">insert</span><span class="params">(<span class="keyword">int</span> l,<span class="keyword">int</span> r,<span class="keyword">int</span> v,<span class="keyword">int</span> L=<span class="number">1</span>,<span class="keyword">int</span> R=M,<span class="keyword">int</span> p=<span class="number">1</span>)</span> </span>&#123;</div><div class="line">	<span class="keyword">if</span> (l==L&amp;&amp;r==R) &#123;</div><div class="line">		add[p]=v;</div><div class="line">		val[p]=v*(r-l+<span class="number">1</span>);</div><div class="line">		<span class="keyword">return</span>;</div><div class="line">	&#125;</div><div class="line">	down(p,L,R);</div><div class="line">	<span class="keyword">int</span> mid=(L+R)&gt;&gt;<span class="number">1</span>;</div><div class="line">	<span class="keyword">if</span> (r&lt;=mid) insert(l,r,v,L,mid,p&lt;&lt;<span class="number">1</span>);</div><div class="line">	<span class="keyword">else</span> <span class="keyword">if</span> (l&gt;mid)  insert(l,r,v,mid+<span class="number">1</span>,R,p&lt;&lt;<span class="number">1</span>|<span class="number">1</span>);</div><div class="line">	<span class="keyword">else</span> insert(l,mid,v,L,mid,p&lt;&lt;<span class="number">1</span>),insert(mid+<span class="number">1</span>,r,v,mid+<span class="number">1</span>,R,p&lt;&lt;<span class="number">1</span>|<span class="number">1</span>);</div><div class="line">	val[p]=val[p&lt;&lt;<span class="number">1</span>]+val[p&lt;&lt;<span class="number">1</span>|<span class="number">1</span>];</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">query</span><span class="params">(<span class="keyword">int</span> l,<span class="keyword">int</span> r,<span class="keyword">int</span> L=<span class="number">1</span>,<span class="keyword">int</span> R=M,<span class="keyword">int</span> p=<span class="number">1</span>)</span> </span>&#123;</div><div class="line">	<span class="keyword">if</span> (l==L&amp;&amp;r==R) <span class="keyword">return</span> val[p];</div><div class="line">	down(p,L,R);</div><div class="line">	<span class="keyword">int</span> mid=(L+R)&gt;&gt;<span class="number">1</span>;</div><div class="line">	<span class="keyword">if</span> (r&lt;=mid) <span class="keyword">return</span> query(l,r,L,mid,p&lt;&lt;<span class="number">1</span>);</div><div class="line">	<span class="keyword">else</span> <span class="keyword">if</span> (l&gt;mid)  <span class="keyword">return</span> query(l,r,mid+<span class="number">1</span>,R,p&lt;&lt;<span class="number">1</span>|<span class="number">1</span>);</div><div class="line">	<span class="keyword">else</span> <span class="keyword">return</span> query(l,mid,L,mid,p&lt;&lt;<span class="number">1</span>)+query(mid+<span class="number">1</span>,r,mid+<span class="number">1</span>,R,p&lt;&lt;<span class="number">1</span>|<span class="number">1</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">struct</span> Q &#123;</div><div class="line">	<span class="keyword">int</span> x,col,ID;</div><div class="line">	<span class="keyword">bool</span> <span class="keyword">operator</span> &lt; (<span class="keyword">const</span> Q &amp;t) <span class="keyword">const</span> &#123;</div><div class="line">		<span class="keyword">if</span> (col!=t.col) <span class="keyword">return</span> col&lt;t.col;</div><div class="line">		<span class="keyword">return</span> ID&lt;t.ID;</div><div class="line">	&#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">struct</span> node &#123;</div><div class="line">	<span class="keyword">int</span> to;</div><div class="line">	<span class="keyword">int</span> nxt;</div><div class="line">&#125;;</div><div class="line"><span class="keyword">int</span> head[M];</div><div class="line">node edge[M*<span class="number">2</span>];</div><div class="line"><span class="keyword">int</span> Tot;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">Add</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span></span>&#123;</div><div class="line">	edge[Tot].to=y,edge[Tot].nxt=head[x];head[x]=Tot++;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">int</span> n;</div><div class="line"><span class="keyword">int</span> col[M];</div><div class="line"></div><div class="line"><span class="keyword">int</span> fa[M];</div><div class="line"><span class="keyword">int</span> L[M],R[M],ID[M],tot;</div><div class="line">Q A[M];</div><div class="line"><span class="keyword">long</span> <span class="keyword">long</span> res;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">clear</span><span class="params">()</span> </span>&#123;</div><div class="line">	<span class="built_in">memset</span>(head,<span class="number">-1</span>,<span class="keyword">sizeof</span>(head));</div><div class="line">	Tot=<span class="number">0</span>;</div><div class="line">	<span class="built_in">memset</span>(val,<span class="number">0</span>,<span class="keyword">sizeof</span>(val));</div><div class="line">	<span class="built_in">memset</span>(add,<span class="number">0</span>,<span class="keyword">sizeof</span>(add));</div><div class="line">	tot=<span class="number">1</span>;</div><div class="line">	res=<span class="number">0</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> f)</span> </span>&#123;</div><div class="line">	fa[x]=f;</div><div class="line">	L[x]=tot;</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i=head[x];i!=<span class="number">-1</span>;i=edge[i].nxt) &#123;</div><div class="line">		<span class="keyword">if</span> (edge[i].to!=f) dfs(edge[i].to,x);</div><div class="line">	&#125;</div><div class="line">	ID[x]=R[x]=tot++;</div><div class="line">	insert(ID[x],ID[x],<span class="number">1</span>);</div><div class="line">	A[x]=(Q)&#123;x,col[x],ID[x]&#125;;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">read</span><span class="params">()</span> </span>&#123;</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;++i) Rd(col[i]);</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;n;++i) &#123;</div><div class="line">		<span class="keyword">int</span> x,y;</div><div class="line">		Rd(x);Rd(y);</div><div class="line">		Add(x,y);</div><div class="line">		Add(y,x);</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">()</span> </span>&#123;</div><div class="line">	read();</div><div class="line">	dfs(<span class="number">1</span>,<span class="number">1</span>);</div><div class="line">	sort(A+<span class="number">1</span>,A+<span class="number">1</span>+n);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">solve</span><span class="params">(<span class="keyword">int</span> cas)</span> </span>&#123;</div><div class="line">	init();</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> c=<span class="number">1</span>,i=<span class="number">1</span>;c&lt;=n;++c) &#123;</div><div class="line">		<span class="keyword">int</span> T=i;</div><div class="line">		<span class="keyword">for</span> (;A[i].col==c&amp;&amp;i&lt;=n;++i) &#123;</div><div class="line">			<span class="keyword">int</span> x=A[i].x,sz=<span class="number">1</span>;</div><div class="line">			<span class="keyword">int</span> outsz=query(L[<span class="number">1</span>],R[<span class="number">1</span>])-query(L[x],R[x]);</div><div class="line">			res+=<span class="number">1l</span>l*outsz*sz;</div><div class="line">			sz+=outsz;</div><div class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> i=head[x];i!=<span class="number">-1</span>;i=edge[i].nxt) &#123;</div><div class="line">				<span class="keyword">int</span> t=edge[i].to;</div><div class="line">				<span class="keyword">if</span> (t==fa[x]) <span class="keyword">continue</span>;</div><div class="line">				<span class="keyword">int</span> size=query(L[t],R[t]);</div><div class="line">				res+=<span class="number">1l</span>l*size*sz;</div><div class="line">				sz+=size;</div><div class="line">			&#125; insert(L[x],R[x],<span class="number">0</span>);</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">for</span> (;A[T].col==c&amp;&amp;T&lt;=n;++T) insert(L[A[T].x],R[A[T].x],<span class="number">1</span>);</div><div class="line">	&#125;</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"Case #%d: %lld\n"</span>,cas,res);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</div><div class="line">	<span class="keyword">int</span> ID=<span class="number">1</span>;</div><div class="line">	<span class="keyword">while</span> (<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n)!=EOF) &#123;</div><div class="line">		clear();</div><div class="line">		solve(ID++);</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<hr>
+<p>题解的方法还是容易理解，但是一开始不会实现。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"></div><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> M=<span class="number">200005</span>;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">char</span> <span class="title">getc</span><span class="params">()</span> </span>&#123;</div><div class="line">	<span class="keyword">static</span> <span class="keyword">char</span> buf[<span class="number">500000</span>],*p1=buf,*p2=buf;</div><div class="line">	<span class="keyword">if</span> (p1==p2) p1=buf,p2=p1+fread(buf,<span class="number">1</span>,<span class="number">500000</span>,<span class="built_in">stdin</span>);</div><div class="line">	<span class="keyword">if</span> (p1==p2) <span class="keyword">return</span> EOF;</div><div class="line">	<span class="keyword">else</span> <span class="keyword">return</span> *p1++;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">char</span> <span class="title">Rd</span><span class="params">(<span class="keyword">int</span> &amp;x)</span></span>&#123;</div><div class="line">	x=<span class="number">0</span>;</div><div class="line">	<span class="keyword">char</span> c;</div><div class="line">	<span class="keyword">while</span> (c=getc(),!<span class="built_in">isdigit</span>(c)&amp;&amp;c!=EOF);</div><div class="line">	<span class="keyword">if</span> (c==EOF) <span class="keyword">return</span> EOF;</div><div class="line">	<span class="keyword">do</span> x=(x&lt;&lt;<span class="number">1</span>)+(x&lt;&lt;<span class="number">3</span>)+(c^<span class="number">48</span>);</div><div class="line">	<span class="keyword">while</span> (c=getc(),<span class="built_in">isdigit</span>(c));</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">putc</span><span class="params">(<span class="keyword">const</span> T &amp;x)</span> </span>&#123;</div><div class="line">	<span class="keyword">if</span> (x==<span class="number">0</span>) <span class="keyword">return</span>;</div><div class="line">	putc(x/<span class="number">10</span>);</div><div class="line">	<span class="built_in">putchar</span>((x-x/<span class="number">10</span>*<span class="number">10</span>)^<span class="number">48</span>);</div><div class="line">&#125;</div><div class="line"><span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">print</span><span class="params">(<span class="keyword">const</span> T &amp;x)</span> </span>&#123;</div><div class="line">	<span class="keyword">if</span> (!x) <span class="built_in">putchar</span>(<span class="string">'0'</span>);</div><div class="line">	<span class="keyword">else</span> putc(x);</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">int</span> n;</div><div class="line"><span class="keyword">int</span> col[M];</div><div class="line"></div><div class="line"><span class="keyword">struct</span> node &#123;</div><div class="line">	<span class="keyword">int</span> t,nxt;</div><div class="line">&#125;;</div><div class="line"><span class="keyword">int</span> head[M&lt;&lt;<span class="number">1</span>];</div><div class="line">node edge[M&lt;&lt;<span class="number">1</span>];</div><div class="line"><span class="keyword">int</span> tot=<span class="number">0</span>;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">Add</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span> </span>&#123;</div><div class="line">	edge[tot]=(node)&#123;y,head[x]&#125;;</div><div class="line">	head[x]=tot++;</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">int</span> cnt,dlt[M],pre[M];</div><div class="line"><span class="keyword">long</span> <span class="keyword">long</span> res;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> fa)</span> </span>&#123;</div><div class="line">	pre[x]=cnt-dlt[col[x]];</div><div class="line">	cnt++;</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i=head[x];~i;i=edge[i].nxt) &#123;</div><div class="line">		<span class="keyword">int</span> t=edge[i].t;</div><div class="line">		<span class="keyword">if</span> (t==fa) <span class="keyword">continue</span>;</div><div class="line">		dlt[col[x]]=cnt;</div><div class="line">		dfs(t,x);</div><div class="line">		<span class="keyword">int</span> v=cnt-dlt[col[x]];</div><div class="line">		res-=((v<span class="number">-1</span>ll)*v)&gt;&gt;<span class="number">1</span>;</div><div class="line">	&#125;</div><div class="line">	dlt[col[x]]=cnt-pre[x];</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</div><div class="line">	<span class="keyword">int</span> ID=<span class="number">0</span>;</div><div class="line">	<span class="keyword">while</span> (Rd(n)!=EOF) &#123;</div><div class="line">		<span class="built_in">memset</span>(head,<span class="number">-1</span>,<span class="keyword">sizeof</span>(head));</div><div class="line">		tot=<span class="number">0</span>;</div><div class="line"></div><div class="line">		cnt=<span class="number">0</span>;</div><div class="line">		<span class="built_in">memset</span>(dlt,<span class="number">0</span>,<span class="keyword">sizeof</span>(dlt));</div><div class="line">		res=((n<span class="number">-1</span>ll)*n*n)&gt;&gt;<span class="number">1</span>;</div><div class="line"></div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;++i) Rd(col[i]);</div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;n;++i) &#123;</div><div class="line">			<span class="keyword">int</span> x,y;</div><div class="line">			Rd(x);Rd(y);</div><div class="line">			Add(x,y);</div><div class="line">			Add(y,x);</div><div class="line">		&#125;</div><div class="line">		dfs(<span class="number">1</span>,<span class="number">1</span>);</div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;++i) &#123;</div><div class="line">			<span class="keyword">int</span> v=cnt-dlt[i];</div><div class="line">			res-=(v<span class="number">-1</span>ll)*v&gt;&gt;<span class="number">1</span>;</div><div class="line">		&#125;</div><div class="line">		<span class="built_in">printf</span>(<span class="string">"Case #%d: %lld\n"</span>,++ID,res);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/klugjo/hexo-theme-clean-blog" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">&copy; 2017 Yanghong<br></p>
+                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
+                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments --><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+</body>
+
+</html>
