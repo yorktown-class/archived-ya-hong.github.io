@@ -119,6 +119,7 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
+        <script src="http://www.google.com/jsapi" type="text/javascript"></script>
                 
                     <li>
                         <a href="/">
@@ -168,13 +169,23 @@
                         </a>
                     </li>
                 
+
+                <form name="cse" id="searchbox" action="search/search.html">
+                  <input type="hidden" name="cref" value="" />
+                  <input type="hidden" name="ie" value="utf-8" />
+                  <input type="hidden" name="hl" value="zh-CN" />
+                  <input name="q" type="text" size="30" />
+                  <input type="submit" name="sa" value="搜索" />
+                </form>
+
             </ul>
+
         </div>
 
-        
-
         <!-- /.navbar-collapse -->
+
     </div>
+
     <!-- /.container -->
 </nav>
 

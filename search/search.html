@@ -3,7 +3,7 @@
 
 <!-- Head tag -->
 <head>
-	<!-- hexo-inject:begin --><!-- hexo-inject:end --><!--Mathjax-->
+	<!--Mathjax-->
     <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
         tex2jax: {
@@ -29,6 +29,13 @@
 
     <!--Description-->
     
+        <meta name="description" content="Loading
+
+ 
+  google.load(&#39;search&#39;, &#39;1&#39;, {language : &#39;zh-CN&#39;, style : google.loader.themes.SHINY});
+  google.setOnLoadCallback(function() {
+    var cus">
+    
 
     <!--Author-->
     
@@ -37,7 +44,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="Yanghong&#39;s Blog"/>
+        <meta property="og:title" content="search"/>
     
 
     <!--Open Graph Description-->
@@ -48,7 +55,7 @@
 
     <!--Type page-->
     
-        <meta property="og:type" content="website" />
+        <meta property="og:type" content="article" />
     
 
     <!--Page Cover-->
@@ -59,7 +66,7 @@
 
     <!-- Title -->
     
-    <title>虚树 - Yanghong&#39;s Blog</title>
+    <title>search - Yanghong&#39;s Blog</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
@@ -88,7 +95,7 @@
 
     <!-- favicon -->
     
-    <link rel="icon" href="images/base/favicon.ico"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+    <link rel="icon" href="images/base/favicon.ico">
     
 	
 </head>
@@ -96,7 +103,7 @@
 
 <body>
 
-    <!-- hexo-inject:begin --><!-- hexo-inject:end --><!-- Menu -->
+    <!-- Menu -->
     <!-- Navigation -->
 <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
     <div class="container-fluid">
@@ -187,46 +194,85 @@
     <!-- Main Content -->
     
 
-<!-- Page Header -->
-<!-- Set your background image for this header in the theme's configuration: index_cover -->
+
+    <section class="main">
+        <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
 <header class="intro-header" style="background-image: url('/images/base/home.jpg')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1>#虚树</h1>
+                <div class="post-heading">
+                    <h1>search</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2017-08-13
+                        
+                    </span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+
+            <!-- Gallery -->
             
-                <div class="post-preview">
-    <a href="/20170729模拟赛/">
-        <h1 class="post-title archive">
-            20170729模拟赛
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-07-31
-    </p>
-</div>
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                
+<body>
+
+<div id="cse" style="width: 100%;">Loading</div>
+<script src="http://www.google.com/jsapi" type="text/javascript"></script>
+<script type="text/javascript"> 
+  google.load('search', '1', {language : 'zh-CN', style : google.loader.themes.SHINY});
+  google.setOnLoadCallback(function() {
+    var customSearchOptions = {};  var customSearchControl = new google.search.CustomSearchControl(
+      '000136117111218905947:9mry87goaik', customSearchOptions);
+    customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+    customSearchControl.draw('cse');
+    var match = location.search.match(/q=([^&]*)(&|$)/);
+    if(match && match[1]){
+        var search = decodeURIComponent(match[1]); 
+    customSearchControl.execute(search);
+    }
+  }, true);
+</script>
+
+</body>
+
+                
+            </div>
+
+            <!-- Comments -->
             
-            <div class="archive-before-pagination"></div>
-            <ul class="pager">
-    
-    
-</ul>
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
         </div>
     </div>
-</div>
+</article>
+    </section>
+
+
+
+
 
 
     <!-- Footer -->
@@ -279,7 +325,7 @@
 <!-- Gallery -->
 <script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
 
-<!-- Disqus Comments --><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+<!-- Disqus Comments -->
 
 
 
