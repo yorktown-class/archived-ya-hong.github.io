@@ -4,7 +4,7 @@ title: Multi-University Training treasure
 subtitle: Multi-University 2016 Training 4
 date: 2017-08-07 11:08:54
 header-img: images/cover/3.jpg
-tags: 树 扫描线 数据结构
+tags: 树 扫描线 数据结构 Multi-University
 author: yanghong
 ---
 

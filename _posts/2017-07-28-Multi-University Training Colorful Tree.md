@@ -4,7 +4,7 @@ title: Multi-University Training Colorful Tree
 subtitle: Multi-UniversityTrainingContest1 1003
 date: 2017-07-28 10:43:29
 header-img: images/cover/7.jpg
-tags:  树 数据结构
+tags:  树 数据结构 Multi-University
 author: yanghong
 ---
 

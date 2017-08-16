@@ -3,8 +3,8 @@ layout: post
 title: Multi-University Training Dirt Ratio
 subtitle: Multi-UniversityTrainingContest4 1004
 date: 2017-08-05 11:18:56
-header-img: images/cover/7.jpg
-tags:  二分答案 数据结构
+header-img: images/cover/7.jpg 
+tags:  二分答案 数据结构 Multi-University
 author: yanghong
 ---
 
