@@ -1,9 +1,9 @@
 ---
 layout: post
-title: Gaussian Elimination
-subtitle: 高斯消元法
+title: 高斯消元法
+subtitle: Gaussian Elimination
 date: 2017-07-06 20:18:22
-header-img: images/Gaussian Elimination.svg
+header-img: images/Gaussian Elimination.jpg
 tags:  高斯消元法 数学
 author: yanghong
 ---
@@ -17,13 +17,18 @@ author: yanghong
 高斯消元法将$n$ 条$n$ 元一次方程转化为$(n+1) \times n$ 的矩阵。然后消元得到每个未知数的解。其实和普通的解方程没什么区别，只是提供了一个通用的套路。
 
 例如：
+
+
+
 $$
 k_{1,1} \times x_{1} + k_{1,2} \times x_{2}  \dots  k_{1,n} \times x_{n} = a_1\\
 k_{2,1} \times x_{1} + k_{2,2} \times x_{2}  \dots  k_{2,n} \times x_{n} = a_2\\
 \vdots \\
 k_{n,1} \times x_{1} + k_{n,2} \times x_{2}  \dots  k_{n,n} \times x_{n} = a_n
 $$
+
 的$n$ 条$n$ 元一次方程可以转化为这样的矩阵：
+
 $$
 \begin{bmatrix}
 k_{1,1} & k_{1,2} & \cdots &  k_{1,n} & a_1 \\
@@ -32,9 +37,11 @@ k_{2,1} & k_{2,2} & \cdots & k_{2,n}  & a_2\\
 k_{n,1} & k_{n,2} & \cdots & k_{n,n}  & a_n
 \end{bmatrix}
 $$
+
 然后是有两种做法：
 
 1. **高斯消元法**。高斯消元法将矩阵转化为行梯阵式：
+
    $$
    \begin{bmatrix}
    k_{1,1}\prime  & k_{1,2}\prime  & k_{1,3} \prime &  \cdots &  k_{1,n} \prime  & a_1\prime  \\
@@ -44,9 +51,12 @@ $$
    0 & 0 & 0 & \cdots & k_{n,n} \prime  & a_n \prime  \\
    \end{bmatrix}
    $$
+
+   
    即每行($i$) 的$1$ 到$i-1$ 项的系数都被消为0。
 
    那么可以直接解出$x_n$ 。然后可以继续消元，消去所有$k_{i,n}$ 。那么又可以向左上求出$x_{n-1}$ 。以此类推，可以得到所有的$x_i$ 。
+
 
 2. 还有一种，**高斯-若尔当消元法**。高斯-若尔当消元法的到的不是行梯阵式，而是每个行$i$ 的$k_{i,i}$ 对应一个$a_i$ （就是只剩下了一条斜对角线）。可以直接得到答案。（但是主要用的好像都是第一种，所以这里也只讲第一种）
 
