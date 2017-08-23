@@ -27,9 +27,13 @@ Alice and Bob are playing a game called 'Gameia ? Gameia !'. The game goes like 
 Given the tree initial, who will win the game if both players play optimally?
 
 **Limits**: 
+
 $T \le 100$
+
 $1 \le N \le 500$
+
 $0 \le K \le 500$
+
 $1 \le Pi \le i$
 
 # Solution
