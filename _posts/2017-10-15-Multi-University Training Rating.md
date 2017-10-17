@@ -19,9 +19,11 @@ A little girl loves programming competition very much. Recently, she has found a
 ## 简单的转移
 
 $dp[x]$ 记录当前rating为$x$, 达到$1000$ 的期望场数, 所以可以根据题意写出:
+
 $$
 dp_x=1 + (1-p) \times dp_{x-100}+ p \times dp_{x+50}
 $$
+
 (特殊的考虑$x-100 < 0$ 和 $x+50>1000$ 的情况) . 两个账号则把状态开到两维. 
 
 可以把最高rating和每场变化的rank值都除以50, 就变成$dp_x=1 + (1-p) \times dp_{x-2}+p \times dp_{x+1}$ , 最终达到20. 
@@ -39,6 +41,7 @@ $$
 先特殊考虑$dp_0,dp_1,dp_2​$ . (状态的的定义仍与上相同) 
 
 令 $q=1-p$ . 
+
 $$
 \begin{align*}
 dp_0 &= 1 + p \times dp_1 +  q \times dp_0\\
@@ -46,11 +49,13 @@ dp_0 &= \frac{1}{1-q} + dp_1\\
 dp_0 &= \frac{1}{p} + dp_1\\
 \end{align*}
 $$
+
 设$t_k$ 为由分数$0$ 到达k所需的场数, 等于$dp_0-dp_k$ .
 
 所以$$t_1 = \frac{1}{q}$$ . 
 
 相应可以得到$t_2$
+
 $$
 \begin{align*}
 dp_1 &= 1 + dp_0 \times q + dp_2 \times p \\
@@ -61,9 +66,11 @@ dp_0 &= dp_2 + \frac{1}{p^2} + \frac{1}{p}\\
 t_2 &= \frac{1}{p} + \frac{1}{p^2}
 \end{align*}
 $$
+
 对于特殊情况$k=0,1,2$ 已经得到$$t_0 =0 , t_1= \frac{1}{p}, t-2= \frac{1}{p} + \frac{1}{p^2}$$ .   
 
 然后可以根据通式$dp_i = p\times dp_{i+1} + q \times dp_{i-2}$ 的到$t_i$ 的递推式. 
+
 $$
 \begin{align*}
 dp_i &= 1+ p \times dp_{i+1} + q \times dp_{i-2}\\
@@ -73,6 +80,7 @@ dp_0 &= dp_{i+1} + \frac{1}{p} + \frac{t_i}{p} - \frac{1-p}{p} t_{i-2}\\
 t_{i+1} &= \frac{1}{p} + \frac{t_i}{p} - \frac{1-p}{p} t_{i-2}\\
 \end{align*}
 $$
+
 那么可以递推得到每一个$t_i$ , 一个账号情况下最终答案就是$t_{20}$ . 
 
 然后考虑两个账号的情况. 一开始是由分数$(0,0)$ 开始, 假设先动一账号, 那么肯定先要到达 $(1,0)$ ,  然后一定是二账号不断比赛直至达到$(1,1)$ . $(1,1)$ 又是两个账号分数相同的情况,再假设先动一账号, 那么必须达到$(2,1)$ 才会停止动一账号, 然后用二账号达到$(2,2)$ , 如此循环直至$(20,19)$ 达到20分. 
