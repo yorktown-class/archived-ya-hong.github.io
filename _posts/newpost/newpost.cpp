@@ -14,9 +14,9 @@ int main() {
 	string title, subtit, tag;
 
 	cout << "title:" << endl;
-	cin >> title;
+	getline(cin, title);
 	cout << "subtitle:" << endl;
-	cin >> subtit;//subtitle or  -1
+	getline(cin, subtit);//subtitle or  -1
 	int num = rand() % img;
 
 	time_t now = time(0);
