@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Reading journal
+title: Reading journal U2A
 date: 2019-10-14
 author: yanghong
 header-img: images/cover/6.jpg
