@@ -3,7 +3,7 @@ layout: post
 title: Multi-University Training Rating
 subtitle: Multi-University 2014 Training
 date: 2017-10-15
-header-img: images/cover/11.jpg
+header-img: images/cover/2.jpg
 tags: dp Multi-University
 author: yanghong
 ---
