@@ -13,7 +13,7 @@ author: yanghong
 ### 题意：
 给出n个数，和m个询问。每个询问包含两个数L和R。
 
-定义区间的最大斜率为 $\max\lceil\frac{|h[i]-h[j]|} {j-i}\rceil\ \ \ \ \ (L<=i<j<=R)$ 。
+定义区间的最大斜率为 $\max\lceil\frac{\vert h[i]-h[j] \vert} {j-i}\rceil\ \ \ \ \ (L<=i<j<=R)$ 。
 
 对每个询问输出所有子区间的区间的最大斜率和。
 
