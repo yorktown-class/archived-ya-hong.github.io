@@ -4,7 +4,7 @@ author: yanghong
 title: Codeforces Round 318 div.2 D. Bear and Blocks
 date: 2017-3-10
 tags:  Codeforces
-header-img: images/cover/2.jpg
+header-img: images/cover/0.jpg
 ---
 
 ### 题目：http://codeforces.com/contest/574/problem/D

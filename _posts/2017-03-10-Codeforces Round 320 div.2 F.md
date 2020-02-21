@@ -4,7 +4,7 @@ author: yanghong
 title: Codeforces Round 320 div.2 F. LCS Again
 date: 2017-3-10
 tags:  Codeforces
-header-img: images/cover/2.jpg
+header-img: images/cover/5.jpg
 ---
 
 

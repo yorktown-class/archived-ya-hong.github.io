@@ -4,7 +4,7 @@ author: yanghong
 title: Codeforces Round 307 div.2 D. GukiZ and Binary Operations
 date: 2017-3-10
 tags:  Codeforces dp 矩阵
-header-img: images/cover/2.jpg
+header-img: images/cover/12.jpg
 ---
 
 
