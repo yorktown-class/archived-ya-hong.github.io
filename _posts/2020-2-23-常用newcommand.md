@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 常用newcommand
+title: 甯哥敤newcommand
 subtitle: 
 date: 2020-2-23
 author: yanghong
@@ -25,7 +25,7 @@ $$
 \newcommand{aabs}[1]{\vert\vert #1 \vert\vert}
 $$
 
-# 字符
+# 瀛楃
 
 ```
 \newcommand{d}{\delta}
@@ -36,7 +36,7 @@ $$
 \newcommand{b}{\textbf}
 \newcommand{t}{\text}
 ```
-# 集合
+# 闆嗗悎
 
 ```
 \newcommand{U}[2]{U(#1, #2)}
