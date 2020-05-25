@@ -3,7 +3,8 @@
 - name: yang hong
   role: student
   github: ya-hong
-  bio: 一个脑瘫
+  img: /img/Avatar.png
+  bio: 一个脑瘫, 一个龙鸣, 一个不学无术的five
   visible: true
 
 - name: Ahmet Cecen
