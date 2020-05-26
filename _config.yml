@@ -1,7 +1,7 @@
 # Site settings
 title: Yanghong's Blog
 description: "Hi! I'm Yanghong"
-# url: "https://projectpages.github.io"
+url: "https://yanghong.github.io"
 
 
 
@@ -13,8 +13,8 @@ headercolor: "#FFFFFF"
 logo: img/logos/Project-Pages-New-Logo-Inverted.png
 
 # Tertiary Parameters
-github_username:  projectpages
-project_repository: project-pages
+github_username: yanghong 
+project_repository: ya-hong.github.io 
 disqus_shortname: ya-hong-github-io
 g-analytics: UA-75881392-1
 altmetric: true
@@ -41,7 +41,7 @@ defaults:
 # Prose Settings
 prose:
   ignore: ['feed.xml', '/stl', '/ply', '/js', '/plugin', '/lib', '/projectors', '_layouts', '/_includes', 'Gruntfile.js', 'package.json', 'proselinks.jsonp', 'ppanchor.matin', '.gitignore', '/search', '/css', '/img', 'favicon.png','_data/*.json','LICENSES.md','README.md','colorscheme.scss','members.html','mentions.html','index.html']
-  siteurl: 'http://projectpages.github.io/project-pages/'
+  siteurl: 'http://ya-hong.github.io/'
   ispp: true
   media: 'img'
   metadata:
@@ -106,7 +106,7 @@ prose:
       - name: "horizontal"
         field:
           element: "hidden"
-          value: </section></section><section markdown="1" data-background="http://projectpages.github.io/project-pages/img/slidebackground.png"><section markdown="1">
+          value: </section></section><section markdown="1" data-background="/img/slidebackground.png"><section markdown="1">
       - name: "vertical"
         field:
           element: "hidden"
@@ -114,7 +114,7 @@ prose:
       - name: "slideinit"
         field:
           element: "hidden"
-          value: <section markdown="1" data-background="http://projectpages.github.io/project-pages/img/slidebackground.png"><section markdown="1">
+          value: <section markdown="1" data-background="/img/slidebackground.png"><section markdown="1">
       - name: "theme"
         field:
           element: "select"
