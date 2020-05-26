@@ -1,6 +1,7 @@
 # Site settings
 title: Yanghong's Blog
 description: "Hi! I'm Yanghong"
+# url: "https://projectpages.github.io"
 
 
 
@@ -17,6 +18,9 @@ github_username: yanghong
 # project_repository: ya-hong.github.io 
 project_repository: project-pages 
 =======
+github_username:  projectpages
+project_repository: project-pages
+>>>>>>> parent of e05587a... edit
 disqus_shortname: ya-hong-github-io
 g-analytics: UA-75881392-1
 altmetric: true
