@@ -20,7 +20,7 @@ g-analytics: UA-167612482-1
 altmetric: true
 
 # Build settings
-plugins: [jekyll-paginate,jekyll-feed]
+plugins: [jekyll-paginate,jekyll-feed,jekyll-sitemap]
 markdown: kramdown
 highlighter: rouge
 permalink: /:title/
