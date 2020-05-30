@@ -1,0 +1,10 @@
+# Group 1
+User-agent: Googlebot
+Disallow: 
+Allow: /
+
+# Group 2
+User-agent: *
+Allow: /
+
+Sitemap: http://www.yanghongsblog.tk/sitemap.xml
