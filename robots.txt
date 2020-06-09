@@ -7,4 +7,3 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: http://www.yanghongsblog.tk/sitemap.xml
