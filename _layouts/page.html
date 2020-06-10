@@ -10,9 +10,7 @@ layout: default
                 <div class="site-heading" style="padding: 150px 0">
 					{% if page.url == '/' %}
                     {% if site.logo %}
-                    <p style="text-align:center;">
-					    <img src= "{{ site.logo }}" style="height: 150px">
-                    </p>
+					<img src= "{{ site.logo }}" style="height: 150px; margin: 0 auto;">
 					{% endif %}	
 					{% else %}{% endif %}	
                     <h1>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</h1>
