@@ -468,7 +468,7 @@ div.live2d-widget {
 	}
 }
 @media (max-width: 1200px) {
-  div.live2d-widget{
+  #live2dcanvas{
   display: none !important;
   }
 }
