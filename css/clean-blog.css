@@ -439,12 +439,11 @@ div.float-right{
 }
 
 div.float-left{
-    width:300px;
-    position:fixed;
+    width:270px;
+    position: relative;
     left:0;
 	/* margin-top:50px; */
   margin-left:1%;
-  margin-bottom: 20%;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
