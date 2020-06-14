@@ -443,18 +443,20 @@ div.float-left{
     position:fixed;
     left:0;
 	/* margin-top:50px; */
-	margin-left:2%;
+	margin-left:1%;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 div.live2d {
     width: 130;
     height: 260;
-    right:0;
-    margin-right: 0.1%;
+    position: fixed;
+    /* right: 130; */
+    margin-right: 5px;
+    margin-bottom: 0px;
 }
 
-@media (max-width: 1400px) {
+@media (max-width: 1450px) {
 	div.float-left{
 	display: none !important;
 	}
