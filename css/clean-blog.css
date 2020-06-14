@@ -447,13 +447,25 @@ div.float-left{
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-@media (max-width: 1500px) {
+div.live2d {
+    width: 130;
+    height: 260;
+    right:0;
+    margin-right: 0.1%;
+}
+
+@media (max-width: 1400px) {
 	div.float-left{
 	display: none !important;
 	}
 	div.float-right{
 	display: none !important;
 	}
+}
+@media (max-width: 1200px) {
+  div.live2d{
+    display: none !important;
+  }
 }
 
 hr.style-one {
