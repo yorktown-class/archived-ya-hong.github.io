@@ -458,7 +458,7 @@ div.float-left{
 	display: none !important;
 	}
 }
-@media (max-width: 1200px) {
+@media (max-width: 1300px) {
   #live2dcanvas{
   display: none !important;
   }
