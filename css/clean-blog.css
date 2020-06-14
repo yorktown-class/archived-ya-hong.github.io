@@ -466,7 +466,7 @@ div.live2d {
 }
 @media (max-width: 1200px) {
   div.live2d{
-    display: none !important;
+  display: none !important;
   }
 }
 
