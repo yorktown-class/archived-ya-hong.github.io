@@ -443,7 +443,7 @@ div.float-left{
     position: sticky;
     position: -webkit-sticky;
     float: left;
-    top: 2%;
+    top: 20%;
     left:0;
 	  margin-top:50px;
     margin-left:1%;
