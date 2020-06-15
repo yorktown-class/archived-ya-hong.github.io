@@ -15,7 +15,11 @@ layout: default
 					{% else %}{% endif %}	
                     <h1>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</h1>
                     <hr class="small">
-                    <span class="subheading" style="white-space:pre-wrap;">{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}</span>
+                    <span class="subheading" style="white-space:pre-wrap;">
+                        <p>
+                            {% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}
+                        </p>
+                    </span>
                 </div>
             </div>
         </div>
