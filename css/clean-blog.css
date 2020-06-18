@@ -439,11 +439,11 @@ div.float-right{
 }
 
 div.float-left{
-    width:270px;
+    width:250px;
     position: sticky;
     position: -webkit-sticky;
     float: left;
-    top: 20%;
+    top: 15%;
     left:0;
 	  margin-top:50px;
     margin-left:1%;
