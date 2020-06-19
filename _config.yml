@@ -5,7 +5,30 @@ url: "https://yanghong.tech"
 
 
 # emoji
+hehe: <img id="emoji" src="/img/emoji/i_f01.png" alt="hehe"/>
+tushe: <img id="emoji" src="/img/emoji/i_f03.png" alt="tushe"/>
+azhe: <img id="emoji" src="/img/emoji/i_f04.png" alt="azhe"/>
+nu: <img id="emoji" src="/img/emoji/i_f06.png" alt="nu"/>
+han: <img id="emoji" src="/img/emoji/i_f08.png" alt="han"/>
+lei: <img id="emoji" src="/img/emoji/i_f09.png" alt="lei"/>
+heixian: <img id="emoji" src="/img/emoji/i_f10.png" alt="heixian"/>
+bishi: <img id="emoji" src="/img/emoji/i_f11.png" alt="bishi"/>
+bugaoxing: <img id="emoji" src="/img/emoji/i_f12.png" alt="bugaoxing"/>
+zhenbang: <img id="emoji" src="/img/emoji/i_f13.png" alt="zhenbang"/>
+yiwen: <img id="emoji" src="/img/emoji/i_f15.png" alt="yiwen"/>
+yinlian: <img id="emoji" src="/img/emoji/i_f16.png" alt="yinlian"/>
+tu: <img id="emoji" src="/img/emoji/i_f17.png" alt="tu"/>
+yi: <img id="emoji" src="/img/emoji/i_f18.png" alt="yi"/>
+weiqu: <img id="emoji" src="/img/emoji/i_f19.png" alt="weiqu"/>
+huaxin: <img id="emoji" src="/img/emoji/i_f20.png" alt="huaxin"/>
+xiaoyan: <img id="emoji" src="/img/emoji/i_f22.png" alt="xiaoyan"/>
+taikaixin: <img id="emoji" src="/img/emoji/i_f24.png" alt="taikaixin"/>
 huaji: <img id="emoji" src="/img/emoji/i_f25.png" alt="huaji"/>
+mianqiang: <img id="emoji" src="/img/emoji/i_f26.png" alt="mianqiang"/>
+kuanghan: <img id="emoji" src="/img/emoji/i_f27.png" alt="kuanghan"/>
+guai: <img id="emoji" src="/img/emoji/i_f28.png" alt="guai"/>
+shuijiao: <img id="emoji" src="/img/emoji/i_f29.png" alt="shuijiao"/>
+jingku: <img id="emoji" src="/img/emoji/i_f30.png" alt="jingku"/>
 
 
 # Secondary Parameters
