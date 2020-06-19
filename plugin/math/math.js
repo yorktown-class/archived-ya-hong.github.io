@@ -7,10 +7,10 @@
 var RevealMath = window.RevealMath || (function(){
 
 	var options = Reveal.getConfig().math || {};
-	// options.mathjax = options.mathjax || 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-	options.mathjax = options.mathjax || 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
-	// options.config = options.config || 'TeX-AMS_HTML-full';
-	options.config = options.config || 'tex-mml-chtml';
+	options.mathjax = options.mathjax || 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+	// options.mathjax = options.mathjax || 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+	options.config = options.config || 'TeX-AMS_HTML-full';
+	// options.config = options.config || 'tex-mml-chtml';
 
 	loadScript( options.mathjax + '?config=' + options.config, function() {
 
