@@ -9,6 +9,7 @@ html {
   font-family: sans-serif;
   -webkit-text-size-adjust: 100%;
       -ms-text-size-adjust: 100%;
+  font-display: swap;
 }
 body {
   margin: 0;
@@ -108,6 +109,7 @@ pre,
 samp {
   font-family: monospace, monospace;
   font-size: 1em;
+  font-display: swap;
 }
 button,
 input,
@@ -269,6 +271,8 @@ th {
 
   src: url('../fonts/glyphicons-halflings-regular.eot');
   src: url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+
+  font-display: swap;
 }
 .glyphicon {
   position: relative;
@@ -905,6 +909,7 @@ body {
   line-height: 1.42857143;
   color: #333;
   background-color: #fff;
+  font-display: swap;
 }
 input,
 button,
@@ -5607,6 +5612,7 @@ button.close {
   visibility: visible;
   filter: alpha(opacity=0);
   opacity: 0;
+  font-display: swap;
 }
 .tooltip.in {
   filter: alpha(opacity=90);
@@ -5722,6 +5728,7 @@ button.close {
   border-radius: 6px;
   -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
           box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+  font-display: swap;
 }
 .popover.top {
   margin-top: -10px;

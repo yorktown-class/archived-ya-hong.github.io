@@ -8,6 +8,7 @@ body {
   font-family: 'Lora', 'Times New Roman', serif;
   font-size: 20px;
   color: #404040;
+  font-display: swap;
 }
 p {
   line-height: 1.5;
@@ -29,6 +30,7 @@ h5,
 h6 {
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 800;
+  font-display: swap;
 }
 a {
   color: #404040;
@@ -58,6 +60,7 @@ hr.small {
   width: 100%;
   z-index: 3;
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, "Microsoft YaHei", sans-serif;
+  font-display: swap;
 }
 .navbar-custom .navbar-brand {
   font-weight: 800;
@@ -171,6 +174,7 @@ hr.small {
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, "Microsoft YaHei", sans-serif;
   font-weight: 300;
   margin: 10px 0 0;
+  font-display: swap;
 }
 @media only screen and (min-width: 768px) {
   .intro-header .site-heading h1,
@@ -191,12 +195,14 @@ hr.small {
   font-size: 24px;
   margin: 10px 0 30px;
   font-weight: 600;
+  font-display: swap;
 }
 .intro-header .post-heading .meta {
   font-family: 'Lora', 'Times New Roman', "Microsoft YaHei", serif;
   font-style: italic;
   font-weight: 300;
   font-size: 20px;
+  font-display: swap;
 }
 .intro-header .post-heading .meta a {
   color: white;
@@ -332,6 +338,7 @@ form .row:first-child .floating-label-form-group {
   letter-spacing: 1px;
   border-radius: 0;
   padding: 15px 25px;
+  font-display: swap;
 }
 .btn-lg {
   font-size: 16px;
@@ -356,6 +363,7 @@ form .row:first-child .floating-label-form-group {
   padding: 10px 5px;
   background-color: white;
   border-radius: 0;
+  font-display: swap;
 }
 @media only screen and (min-width: 768px) {
   .pager li > a,

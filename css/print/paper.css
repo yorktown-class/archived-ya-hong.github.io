@@ -46,6 +46,7 @@ body, p, td, li, div, a {
 	font-size: 16pt!important;
 	font-family: Georgia, "Times New Roman", Times, serif !important;
 	color: #000;
+  font-display: swap;
 }
 
 /* SECTION 4: Set heading font face, sizes, and color.
@@ -59,6 +60,7 @@ h1,h2,h3,h4,h5,h6 {
 	text-shadow: 0 0 0 #000 !important;
 	text-align: left;
 	letter-spacing: normal;
+  font-display: swap;
 }
 /* Need to reduce the size of the fonts for printing */
 h1 { font-size: 26pt !important;  }

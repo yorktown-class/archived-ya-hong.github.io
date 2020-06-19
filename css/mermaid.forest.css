@@ -4,6 +4,7 @@
 .mermaid .label {
   font-family: 'trebuchet ms', verdana, arial;
   color: #333;
+  font-display: swap;
 }
 .node rect,
 .node circle,
@@ -89,6 +90,7 @@ text.actor {
   stroke: none;
   font-family: 'trebuchet ms', verdana, arial;
   font-size: 14px;
+  font-display: swap;
 }
 /** Section styling */
 .section {
@@ -261,6 +263,7 @@ g.classGroup text {
   stroke: none;
   font-family: 'trebuchet ms', verdana, arial;
   font-size: 14px;
+  font-display: swap;
 }
 g.classGroup rect {
   fill: #cde498;
@@ -337,6 +340,7 @@ svg .classLabel .label {
 .node text {
   font-family: 'trebuchet ms', verdana, arial;
   font-size: 14px;
+  font-display: swap;
 }
 div.mermaidTooltip {
   position: absolute;
@@ -350,4 +354,5 @@ div.mermaidTooltip {
   border-radius: 2px;
   pointer-events: none;
   z-index: 100;
+  font-display: swap;
 }
