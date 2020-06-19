@@ -935,7 +935,10 @@ img:not(#emoji){
   vertical-align: middle;
 }
 img#emoji {
-  margin-left: 0;
+  display:flex;
+  /* flex-wrap:wrap;  */
+  align-items:center;
+  align-self:flex-start;
 }
 
 .img-responsive,
@@ -6334,3 +6337,9 @@ button.close {
   }
 }
 /*# sourceMappingURL=bootstrap.css.map */
+
+p{
+  display: flex;
+  justify-content: flex-start;
+  align-items:center;
+}
