@@ -935,7 +935,7 @@ img:not(#emoji){
   vertical-align: middle;
 }
 img#emoji {
-  vertical-align: auto;
+  margin-left: 0;
 }
 
 .img-responsive,
