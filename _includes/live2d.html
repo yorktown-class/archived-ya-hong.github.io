@@ -21,16 +21,24 @@
     setTimeout(function () {
         if (!isBot && supportsIntersectionObserver) {
             // 当前环境不是爬虫、并且浏览器兼容 IntersectionObserver API
-            L2Dwidget.init({"pluginRootPath":"live2dw/",
-                "pluginJsPath":"lib/",
-                "pluginModelPath":"assets/",
-                "tagMode":true,
-                "debug":false,
-                "model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},
-                "display":{"position":"right","width":130,"height":260},
-                "mobile":{"show":false},
-                "log":false
-            });
+            var live2d_observer = new IntersectionObserver(function(entries) {
+                if (entries[0].isIntersecting) {
+                    L2Dwidget.init({"pluginRootPath":"live2dw/",
+                        "pluginJsPath":"lib/",
+                        "pluginModelPath":"assets/",
+                        "tagMode":true,
+                        "debug":false,
+                        "model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},
+                        "display":{"position":"right","width":130,"height":260},
+                        "mobile":{"show":false},
+                        "log":false
+                    });
+                    // 停止当前的 Observer
+                    live2d_observer.disconnect();
+                }
+            }, { threshold: [0] });
+            // 设置让 Observer 观察 #disqus_thread 元素
+            live2d_observer.observe(document.getElementById('live2dcanvas'));
         } else {
             // 当前环境是爬虫、或当前浏览器其不兼容 IntersectionObserver API
       }
