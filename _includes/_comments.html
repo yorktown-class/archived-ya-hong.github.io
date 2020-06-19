@@ -30,7 +30,7 @@
         (d.head || d.body).appendChild(s);
         window.disqus_config = function () {
         this.page.url = "https://ya-hong.github.io";
-        this.page.identifier = "";
+        this.page.identifier = "{{post.title}}";
         };
         // 如果你和我一样在用 DisqusJS，loadDisqus() 里就应该是 DisqusJS 的初始化代码 new DisqusJS({...})
     }
