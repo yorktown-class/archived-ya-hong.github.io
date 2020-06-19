@@ -47,7 +47,7 @@
 
 	<!-- Old Math Jax -->
 
-	<script type="text/x-mathjax-config">
+	<script async type="text/x-mathjax-config">
 	MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
 	</script>
 
@@ -59,7 +59,7 @@
 		src="https://cdn.bootcss.com/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 	</script>
 
-	<script type="text/x-mathjax-config">
+	<script async type="text/x-mathjax-config">
 	MathJax.Hub.Config({
 		TeX: { equationNumbers: { autoNumber: "AMS" } }
 	});
@@ -96,10 +96,10 @@
 	<script src="https://cdn.staticfile.org/jquery/2.1.4/jquery.min.js"></script>
 
 	<!-- Bootstrap Core JavaScript -->
-	<script src="https://cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<script async src="https://cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
 	<!-- Custom Theme JavaScript -->
-	<script src="{{ '/js/clean-blog.min.js' | prepend: site.baseurl | prepend: site.url }}"></script>
+	<script async src="{{ '/js/clean-blog.min.js' | prepend: site.baseurl | prepend: site.url }}"></script>
 	
 	{% include analytics.html %}
 	
