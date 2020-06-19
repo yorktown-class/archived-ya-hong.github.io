@@ -934,6 +934,9 @@ figure {
 img:not(#emoji){
   vertical-align: middle;
 }
+img#emoji {
+  vertical-align: auto;
+}
 
 .img-responsive,
 .thumbnail > img,
