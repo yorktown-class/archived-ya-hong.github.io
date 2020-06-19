@@ -931,7 +931,7 @@ a:focus {
 figure {
   margin: 0;
 }
-img:not(.emoji){
+img:not(#emoji){
   vertical-align: middle;
 }
 
