@@ -7,6 +7,10 @@ tags:
 header-img: images/cover/19.jpg
 ---
 
+A: 
+
 {{ site.huaji }}
+
+B: 
 
 {{ huaji }}
