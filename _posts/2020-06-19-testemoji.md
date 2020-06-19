@@ -9,7 +9,7 @@ header-img: images/cover/19.jpg
 
 A: 
 
-{{ site.huaji }}
+abcd {{ site.huaji }} abcd
 
 B: 
 
