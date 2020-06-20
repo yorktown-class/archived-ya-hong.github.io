@@ -38,7 +38,7 @@
                 }
             }, { threshold: [0] });
             // 设置让 Observer 观察 #disqus_thread 元素
-            live2d_observer.observe(document.getElementById('content'));
+            live2d_observer.observe(document.getElementsByClassName('container'));
         } else {
             // 当前环境是爬虫、或当前浏览器其不兼容 IntersectionObserver API
       }
