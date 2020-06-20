@@ -2,7 +2,7 @@
 <div class="row">
 
 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1" id="disqus_thread">
-    <p>加载disqus中</p>
+    <center><p>无法加载disqus😅</p></center>
 </div>
 
 </div>
@@ -49,15 +49,15 @@
             // 当前环境不是爬虫、并且浏览器兼容 IntersectionObserver API
             var disqus_observer = new IntersectionObserver(function(entries) {
                 // 当前视窗中已出现 Disqus 评论框所在位置
-                if (entries[0].isIntersecting) {
+                // if (entries[0].isIntersecting) {
                     // 加载 Disqus
                     loadDisqus();
                     // 停止当前的 Observer
                     disqus_observer.disconnect();
-                }
+                // }
             }, { threshold: [0] });
             // 设置让 Observer 观察 #disqus_thread 元素
-            disqus_observer.observe(document.getElementById('disqus_thread'));
+            disqus_observer.observe(document.getElementById('star'));
         } else {
             // 当前环境是爬虫、或当前浏览器其不兼容 IntersectionObserver API
             // 直接加载 Disqus
