@@ -49,12 +49,12 @@
             // 当前环境不是爬虫、并且浏览器兼容 IntersectionObserver API
             var disqus_observer = new IntersectionObserver(function(entries) {
                 // 当前视窗中已出现 Disqus 评论框所在位置
-                // if (entries[0].isIntersecting) {
+                if (entries[0].isIntersecting) {
                     // 加载 Disqus
                     loadDisqus();
                     // 停止当前的 Observer
                     disqus_observer.disconnect();
-                // }
+                }
             }, { threshold: [0] });
             // 设置让 Observer 观察 #disqus_thread 元素
             disqus_observer.observe(document.getElementById('star'));
