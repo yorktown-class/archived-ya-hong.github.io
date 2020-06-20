@@ -22,7 +22,7 @@
         if (!isBot && supportsIntersectionObserver) {
             // 当前环境不是爬虫、并且浏览器兼容 IntersectionObserver API
             var live2d_observer = new IntersectionObserver(function(entries) {
-                if (entries[0].isIntersecting) {
+                if (entries[0].intersectionRatio = 0.3) {
                     L2Dwidget.init({"pluginRootPath":"live2dw/",
                         "pluginJsPath":"lib/",
                         "pluginModelPath":"assets/",

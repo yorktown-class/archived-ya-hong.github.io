@@ -46,22 +46,22 @@
     // 其实这个 hack 本来是用于优化骨架屏显示的。一些浏览器总是等 JavaScript 执行完了才开始页面渲染，导致骨架屏起不到降低 FCP 的优化效果，所以通过 hack 将耗时函数放到骨架屏渲染完成后再进行。
     setTimeout(function () {
         if (!isBot && supportsIntersectionObserver) {
-        // 当前环境不是爬虫、并且浏览器兼容 IntersectionObserver API
-        var disqus_observer = new IntersectionObserver(function(entries) {
-            // 当前视窗中已出现 Disqus 评论框所在位置
-            if (entries[0].isIntersecting) {
-            // 加载 Disqus
-            loadDisqus();
-            // 停止当前的 Observer
-            disqus_observer.disconnect();
-            }
-        }, { threshold: [0] });
-        // 设置让 Observer 观察 #disqus_thread 元素
-        disqus_observer.observe(document.getElementById('disqus_thread'));
+            // 当前环境不是爬虫、并且浏览器兼容 IntersectionObserver API
+            var disqus_observer = new IntersectionObserver(function(entries) {
+                // 当前视窗中已出现 Disqus 评论框所在位置
+                if (entries[0].isIntersecting) {
+                    // 加载 Disqus
+                    loadDisqus();
+                    // 停止当前的 Observer
+                    disqus_observer.disconnect();
+                }
+            }, { threshold: [0] });
+            // 设置让 Observer 观察 #disqus_thread 元素
+            disqus_observer.observe(document.getElementById('disqus_thread'));
         } else {
-        // 当前环境是爬虫、或当前浏览器其不兼容 IntersectionObserver API
-        // 直接加载 Disqus
-        loadDisqus();
+            // 当前环境是爬虫、或当前浏览器其不兼容 IntersectionObserver API
+            // 直接加载 Disqus
+            // loadDisqus();
         }
     }, 1);
 
