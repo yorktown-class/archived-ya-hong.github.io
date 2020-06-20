@@ -23,6 +23,7 @@
             // 当前环境不是爬虫、并且浏览器兼容 IntersectionObserver API
             var live2d_observer = new IntersectionObserver(function(entries) {
                 if (entries[0].intersectionRatio = 0.3) {
+                    alert("time to load");
                     L2Dwidget.init({"pluginRootPath":"live2dw/",
                         "pluginJsPath":"lib/",
                         "pluginModelPath":"assets/",
@@ -38,7 +39,7 @@
                 }
             }, { threshold: [0] });
             // 设置让 Observer 观察 #disqus_thread 元素
-            live2d_observer.observe(document.getElementById('content'));
+            live2d_observer.observe(document.getElementById('intro-header'));
         } else {
             // 当前环境是爬虫、或当前浏览器其不兼容 IntersectionObserver API
       }
