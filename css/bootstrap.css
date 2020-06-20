@@ -936,16 +936,18 @@ a:focus {
 figure {
   margin: 0;
 }
-img:not(#emoji){
+img {
   vertical-align: middle;
 }
 img#emoji {
-  display:flex;
+  /* display:flex; */
   /* flex-wrap:wrap;  */
-  align-items:center;
-  align-self:flex-start;
-  margin-left: 1px;
-  margin-right: 1px;
+  /* align-items:center; */
+  /* align-self:flex-start; */
+  /* margin-left: 1px; */
+  /* margin-right: 1px; */
+  vertical-align: middle;
+  display: initial;
 }
 
 .img-responsive,
@@ -6347,9 +6349,9 @@ button.close {
 }
 /*# sourceMappingURL=bootstrap.css.map */
 
-article>div>div>div p{
+/* article>div>div>div p{
   flex-wrap: wrap;
   display: flex;
   justify-content: flex-start;
   align-items:center;
-}
+} */
